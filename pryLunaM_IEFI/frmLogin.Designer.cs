@@ -41,7 +41,7 @@
             this.btnIniciarSesion.Location = new System.Drawing.Point(138, 213);
             this.btnIniciarSesion.Name = "btnIniciarSesion";
             this.btnIniciarSesion.Size = new System.Drawing.Size(200, 51);
-            this.btnIniciarSesion.TabIndex = 0;
+            this.btnIniciarSesion.TabIndex = 2;
             this.btnIniciarSesion.Text = "Iniciar Sesion";
             this.btnIniciarSesion.UseVisualStyleBackColor = true;
             this.btnIniciarSesion.Click += new System.EventHandler(this.btnIniciarSesion_Click);
@@ -63,7 +63,7 @@
             this.txtContraseña.Multiline = true;
             this.txtContraseña.Name = "txtContraseña";
             this.txtContraseña.Size = new System.Drawing.Size(199, 32);
-            this.txtContraseña.TabIndex = 3;
+            this.txtContraseña.TabIndex = 1;
             // 
             // txtUsuario
             // 
@@ -72,7 +72,7 @@
             this.txtUsuario.Multiline = true;
             this.txtUsuario.Name = "txtUsuario";
             this.txtUsuario.Size = new System.Drawing.Size(199, 32);
-            this.txtUsuario.TabIndex = 4;
+            this.txtUsuario.TabIndex = 0;
             // 
             // label2
             // 

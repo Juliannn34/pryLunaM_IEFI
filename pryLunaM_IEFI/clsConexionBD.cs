@@ -9,7 +9,7 @@ using System.Windows.Forms;
 
 namespace pryLunaM_IEFI
 {
-    internal class ConexionBD
+    internal class clsConexionBD
     {
         //cadena de conexion
         string cadenaConexion = "Server=localhost;Database=IEFI;Trusted_Connection=True;";
@@ -79,14 +79,14 @@ namespace pryLunaM_IEFI
                 using (coneccionBaseDatos = new SqlConnection(cadenaConexion))
                 {
                     coneccionBaseDatos.Open();
-                    string consulta = "INSERT INTO Usuarios (Nombre, Contraseña, Categoria) " +
+                    string consulta = "INSERT INTO Usuarios (Nombre, Cargo, Categoria) " +
                                       "VALUES (@Nombre, @Contraseña, @Categoria)";
 
                     using (comandoBaseDatos = new SqlCommand(consulta, coneccionBaseDatos))
                     {
                         comandoBaseDatos.Parameters.AddWithValue("@Nombre", usuario.Nombre);
                         comandoBaseDatos.Parameters.AddWithValue("@Contraseña", usuario.Contraseña);
-                        comandoBaseDatos.Parameters.AddWithValue("@Categoria", usuario.Categoria);
+                        comandoBaseDatos.Parameters.AddWithValue("@Cargo", usuario.Cargo);
 
                         comandoBaseDatos.ExecuteNonQuery();
                     }
@@ -99,6 +99,5 @@ namespace pryLunaM_IEFI
                 MessageBox.Show("Error al agregar usuario: " + error.Message);
             }
         }
-
     }
 }

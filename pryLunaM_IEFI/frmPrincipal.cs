@@ -16,5 +16,16 @@ namespace pryLunaM_IEFI
         {
             InitializeComponent();
         }
+
+        private void usuariosToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmGestionUsuarios UsuariosVentana = new frmGestionUsuarios();
+            UsuariosVentana.Show();
+        }
+
+        private void auditoriaToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

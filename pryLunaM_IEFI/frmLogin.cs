@@ -21,15 +21,15 @@ namespace pryLunaM_IEFI
         private void btnIniciarSesion_Click(object sender, EventArgs e)
         {
             string connectionString = "Server=localhost;Database=IEFI;Trusted_Connection=True;";
-            string username = txtUsuario.Text;
-            string password = txtContraseña.Text;
+            string NombreUsuario = txtUsuario.Text;
+            string Contraseña = txtContraseña.Text;
 
             // Comparación sensible a mayúsculas, minúsculas, espacios y números
             string query = @"
                  SELECT COUNT(*) 
                   FROM Usuarios 
-                  WHERE Usuario COLLATE Latin1_General_CS_AS = @usuario 
-                   AND Contraseña COLLATE Latin1_General_CS_AS = @clave";
+                  WHERE Nombre COLLATE Latin1_General_CS_AS = @nombre 
+                   AND Contraseña COLLATE Latin1_General_CS_AS = @contraseña";
 
             using (SqlConnection conn = new SqlConnection(connectionString))
             {
@@ -37,8 +37,8 @@ namespace pryLunaM_IEFI
                 {
                     conn.Open();
                     SqlCommand cmd = new SqlCommand(query, conn);
-                    cmd.Parameters.AddWithValue("@usuario", username);
-                    cmd.Parameters.AddWithValue("@clave", password);
+                    cmd.Parameters.AddWithValue("@nombre", NombreUsuario);
+                    cmd.Parameters.AddWithValue("@contraseña", Contraseña);
 
                     int count = (int)cmd.ExecuteScalar();
 

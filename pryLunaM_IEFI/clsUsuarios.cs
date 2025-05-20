@@ -11,16 +11,16 @@ namespace pryLunaM_IEFI
         public int Id {  get; set; }
         public string Nombre { get; set; }    
         public string Contraseña { get; set; }
-        public bool Categoria { get; set; }
+        public bool Cargo { get; set; }
 
         public clsUsuarios() { }
 
-        public clsUsuarios(int id, string nombre, string contraseña, bool categoria)
+        public clsUsuarios(int id, string nombre, string contraseña, bool cargo)
         {
             Id = id;
             Nombre = nombre;
             Contraseña = contraseña;
-            Categoria = categoria;
+            Cargo = cargo;
         
         }
     }
