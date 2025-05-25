@@ -6,22 +6,21 @@ using System.Threading.Tasks;
 
 namespace pryLunaM_IEFI
 {
-    internal class clsUsuarios
+    public class clsUsuarios
     {
-        public int Id {  get; set; }
-        public string Nombre { get; set; }    
+        public int Id { get; set; }
+        public string Nombre { get; set; }
         public string Contraseña { get; set; }
-        public bool Cargo { get; set; }
+        public string Cargo { get; set; }
 
         public clsUsuarios() { }
 
-        public clsUsuarios(int id, string nombre, string contraseña, bool cargo)
+        public clsUsuarios(int id, string nombre, string contraseña, string cargo)
         {
             Id = id;
             Nombre = nombre;
             Contraseña = contraseña;
             Cargo = cargo;
-        
         }
     }
 }

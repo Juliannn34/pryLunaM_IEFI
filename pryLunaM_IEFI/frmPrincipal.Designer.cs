@@ -28,11 +28,17 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.tareasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.administraciónToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.usuariosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.auditoriaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.lblUsuarioIniciado = new System.Windows.Forms.Label();
+            this.lblCargoIniciado = new System.Windows.Forms.Label();
+            this.lblFechaDeIngreso = new System.Windows.Forms.Label();
+            this.pnlAuditoria = new System.Windows.Forms.Panel();
+            this.timerTiempoTrabajo = new System.Windows.Forms.Timer(this.components);
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -65,22 +71,66 @@
             // usuariosToolStripMenuItem
             // 
             this.usuariosToolStripMenuItem.Name = "usuariosToolStripMenuItem";
-            this.usuariosToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.usuariosToolStripMenuItem.Size = new System.Drawing.Size(132, 22);
             this.usuariosToolStripMenuItem.Text = "Usuarios...";
             this.usuariosToolStripMenuItem.Click += new System.EventHandler(this.usuariosToolStripMenuItem_Click);
             // 
             // auditoriaToolStripMenuItem
             // 
             this.auditoriaToolStripMenuItem.Name = "auditoriaToolStripMenuItem";
-            this.auditoriaToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.auditoriaToolStripMenuItem.Size = new System.Drawing.Size(132, 22);
             this.auditoriaToolStripMenuItem.Text = "Auditoria...";
             this.auditoriaToolStripMenuItem.Click += new System.EventHandler(this.auditoriaToolStripMenuItem_Click);
+            // 
+            // lblUsuarioIniciado
+            // 
+            this.lblUsuarioIniciado.AutoSize = true;
+            this.lblUsuarioIniciado.Location = new System.Drawing.Point(21, 415);
+            this.lblUsuarioIniciado.Name = "lblUsuarioIniciado";
+            this.lblUsuarioIniciado.Size = new System.Drawing.Size(43, 13);
+            this.lblUsuarioIniciado.TabIndex = 1;
+            this.lblUsuarioIniciado.Text = "Usuario";
+            // 
+            // lblCargoIniciado
+            // 
+            this.lblCargoIniciado.AutoSize = true;
+            this.lblCargoIniciado.Location = new System.Drawing.Point(126, 415);
+            this.lblCargoIniciado.Name = "lblCargoIniciado";
+            this.lblCargoIniciado.Size = new System.Drawing.Size(35, 13);
+            this.lblCargoIniciado.TabIndex = 2;
+            this.lblCargoIniciado.Text = "Cargo";
+            // 
+            // lblFechaDeIngreso
+            // 
+            this.lblFechaDeIngreso.AutoSize = true;
+            this.lblFechaDeIngreso.Location = new System.Drawing.Point(637, 415);
+            this.lblFechaDeIngreso.Name = "lblFechaDeIngreso";
+            this.lblFechaDeIngreso.Size = new System.Drawing.Size(74, 13);
+            this.lblFechaDeIngreso.TabIndex = 3;
+            this.lblFechaDeIngreso.Text = "Fecha ingreso";
+            // 
+            // pnlAuditoria
+            // 
+            this.pnlAuditoria.Location = new System.Drawing.Point(0, 0);
+            this.pnlAuditoria.Name = "pnlAuditoria";
+            this.pnlAuditoria.Size = new System.Drawing.Size(800, 452);
+            this.pnlAuditoria.TabIndex = 4;
+            this.pnlAuditoria.MouseLeave += new System.EventHandler(this.pnlAuditoria_MouseLeave);
+            this.pnlAuditoria.MouseMove += new System.Windows.Forms.MouseEventHandler(this.pnlAuditoria_MouseMove);
+            // 
+            // timerTiempoTrabajo
+            // 
+            this.timerTiempoTrabajo.Tick += new System.EventHandler(this.timerTiempoTrabajo_Tick);
             // 
             // frmPrincipal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.pnlAuditoria);
+            this.Controls.Add(this.lblFechaDeIngreso);
+            this.Controls.Add(this.lblCargoIniciado);
+            this.Controls.Add(this.lblUsuarioIniciado);
             this.Controls.Add(this.menuStrip1);
             this.MainMenuStrip = this.menuStrip1;
             this.MaximizeBox = false;
@@ -88,6 +138,8 @@
             this.Name = "frmPrincipal";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Principal";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.frmPrincipal_FormClosing);
+            this.Load += new System.EventHandler(this.frmPrincipal_Load);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             this.ResumeLayout(false);
@@ -102,5 +154,10 @@
         private System.Windows.Forms.ToolStripMenuItem administraciónToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem usuariosToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem auditoriaToolStripMenuItem;
+        private System.Windows.Forms.Label lblUsuarioIniciado;
+        private System.Windows.Forms.Label lblCargoIniciado;
+        private System.Windows.Forms.Label lblFechaDeIngreso;
+        private System.Windows.Forms.Panel pnlAuditoria;
+        private System.Windows.Forms.Timer timerTiempoTrabajo;
     }
 }

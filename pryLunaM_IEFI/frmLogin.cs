@@ -13,10 +13,18 @@ namespace pryLunaM_IEFI
 {
     public partial class frmLogin : Form
     {
+        private clsUsuarios usuarioLogueado;
+        private DateTime fechaInicio;
+
+
         public frmLogin()
         {
             InitializeComponent();
+
         }
+
+
+
        int intentosFallidos = 0;
         private void btnIniciarSesion_Click(object sender, EventArgs e)
         {
@@ -24,11 +32,10 @@ namespace pryLunaM_IEFI
             string NombreUsuario = txtUsuario.Text;
             string Contraseña = txtContraseña.Text;
 
-            // Comparación sensible a mayúsculas, minúsculas, espacios y números
             string query = @"
-                 SELECT COUNT(*) 
-                  FROM Usuarios 
-                  WHERE Nombre COLLATE Latin1_General_CS_AS = @nombre 
+                  SELECT Id, Nombre, Contraseña, Cargo 
+                   FROM Usuarios 
+                   WHERE Nombre COLLATE Latin1_General_CS_AS = @nombre 
                    AND Contraseña COLLATE Latin1_General_CS_AS = @contraseña";
 
             using (SqlConnection conn = new SqlConnection(connectionString))
@@ -40,24 +47,36 @@ namespace pryLunaM_IEFI
                     cmd.Parameters.AddWithValue("@nombre", NombreUsuario);
                     cmd.Parameters.AddWithValue("@contraseña", Contraseña);
 
-                    int count = (int)cmd.ExecuteScalar();
+                    SqlDataReader reader = cmd.ExecuteReader();
 
-                    if (count > 0)
+                    if (reader.Read())
                     {
-                        MessageBox.Show("Inicio de sesión exitoso.");
-                        Form productos = new frmPrincipal();
-                        productos.Show();
+                        // Crear el usuario desde la BD
+                        clsUsuarios usuario = new clsUsuarios
+                        {
+                            Id = Convert.ToInt32(reader["Id"]),
+                            Nombre = reader["Nombre"].ToString(),
+                            Contraseña = reader["Contraseña"].ToString(),
+                            Cargo = reader["Cargo"].ToString()
+                        };
+
+                        DateTime fechaInicio = DateTime.Now;
+
+                        // Pasar el usuario y fecha al formulario principal
                         this.Hide();
+                        frmPrincipal principal = new frmPrincipal(usuario, fechaInicio);
+                        principal.ShowDialog();
+                        this.Close();
                     }
                     else
                     {
-                        intentosFallidos++; // Aumentar el contador
+                        intentosFallidos++;
                         MessageBox.Show("Usuario o contraseña incorrectos. Intento " + intentosFallidos + " de 3.");
 
                         if (intentosFallidos >= 3)
                         {
                             MessageBox.Show("Demasiados intentos fallidos. El formulario se cerrará.");
-                            this.Close(); // Cierra el formulario actual
+                            this.Close();
                         }
                     }
                 }
