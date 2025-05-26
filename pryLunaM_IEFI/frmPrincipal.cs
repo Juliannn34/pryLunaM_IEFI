@@ -34,7 +34,7 @@ namespace pryLunaM_IEFI
             lblFechaDeIngreso.Text = "Inicio: " + fechaInicio.ToString("dd/MM/yyyy HH:mm");
 
 
-           InsertarAuditoriaInicio(usuarioLogueado.Nombre, fechaInicio); // 👈 usar Nombre y fecha
+           InsertarAuditoriaInicio(usuarioLogueado.Nombre, fechaInicio); 
 
 
         }
@@ -67,7 +67,7 @@ namespace pryLunaM_IEFI
 
         private void pnlAuditoria_MouseLeave(object sender, EventArgs e)
         {
-            timerTiempoTrabajo.Enabled = false;     //se desactiva cuando salgo del panel
+            timerTiempoTrabajo.Enabled = false;    
         }
 
         private void frmPrincipal_FormClosing(object sender, FormClosingEventArgs e)

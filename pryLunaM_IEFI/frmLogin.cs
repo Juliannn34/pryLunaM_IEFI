@@ -51,7 +51,7 @@ namespace pryLunaM_IEFI
 
                     if (reader.Read())
                     {
-                        // Crear el usuario desde la BD
+                       
                         clsUsuarios usuario = new clsUsuarios
                         {
                             Id = Convert.ToInt32(reader["Id"]),
@@ -62,7 +62,7 @@ namespace pryLunaM_IEFI
 
                         DateTime fechaInicio = DateTime.Now;
 
-                        // Pasar el usuario y fecha al formulario principal
+                   
                         this.Hide();
                         frmPrincipal principal = new frmPrincipal(usuario, fechaInicio);
                         principal.ShowDialog();
