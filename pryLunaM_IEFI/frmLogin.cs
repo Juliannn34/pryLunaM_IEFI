@@ -87,6 +87,16 @@ namespace pryLunaM_IEFI
             }
         }
 
-        
+        private void btnContraseñaVisible_Click(object sender, EventArgs e)
+        {
+            if (txtContraseña.PasswordChar == '\0')
+            {
+                txtContraseña.PasswordChar = '*'; // Ocultar contraseña
+            }
+            else
+            {
+                txtContraseña.PasswordChar = '\0'; // Mostrar contraseña
+            }
+        }
     }
 }

@@ -33,6 +33,7 @@
             this.txtContraseña = new System.Windows.Forms.TextBox();
             this.txtUsuario = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
+            this.btnContraseñaVisible = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // btnIniciarSesion
@@ -62,6 +63,7 @@
             this.txtContraseña.Location = new System.Drawing.Point(209, 124);
             this.txtContraseña.Multiline = true;
             this.txtContraseña.Name = "txtContraseña";
+            this.txtContraseña.PasswordChar = '*';
             this.txtContraseña.Size = new System.Drawing.Size(199, 32);
             this.txtContraseña.TabIndex = 1;
             // 
@@ -84,11 +86,24 @@
             this.label2.TabIndex = 5;
             this.label2.Text = "Contraseña";
             // 
+            // btnContraseñaVisible
+            // 
+            this.btnContraseñaVisible.BackColor = System.Drawing.Color.Transparent;
+            this.btnContraseñaVisible.BackgroundImage = global::pryLunaM_IEFI.Properties.Resources.ContraseñaVisible_png;
+            this.btnContraseñaVisible.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btnContraseñaVisible.Location = new System.Drawing.Point(375, 130);
+            this.btnContraseñaVisible.Name = "btnContraseñaVisible";
+            this.btnContraseñaVisible.Size = new System.Drawing.Size(24, 22);
+            this.btnContraseñaVisible.TabIndex = 6;
+            this.btnContraseñaVisible.UseVisualStyleBackColor = false;
+            this.btnContraseñaVisible.Click += new System.EventHandler(this.btnContraseñaVisible_Click);
+            // 
             // frmLogin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(465, 321);
+            this.Controls.Add(this.btnContraseñaVisible);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.txtUsuario);
             this.Controls.Add(this.txtContraseña);
@@ -111,6 +126,7 @@
         private System.Windows.Forms.TextBox txtContraseña;
         private System.Windows.Forms.TextBox txtUsuario;
         private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Button btnContraseñaVisible;
     }
 }
 
