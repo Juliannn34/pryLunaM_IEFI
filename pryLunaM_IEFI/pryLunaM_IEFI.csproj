@@ -112,5 +112,11 @@
   <ItemGroup>
     <None Include="Resources\ContraseñaVisible.png.png" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\LimpiarCampos.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Recargar 2.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

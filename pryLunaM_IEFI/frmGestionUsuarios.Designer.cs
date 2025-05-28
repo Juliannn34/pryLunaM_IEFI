@@ -28,28 +28,33 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmGestionUsuarios));
             this.dgvUsuarios = new System.Windows.Forms.DataGridView();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.btnEliminarUsuario = new System.Windows.Forms.Button();
-            this.btnModificarUsuario = new System.Windows.Forms.Button();
+            this.txtSueldo = new System.Windows.Forms.TextBox();
+            this.btnBuscarId = new System.Windows.Forms.Button();
+            this.lblSueldo = new System.Windows.Forms.Label();
+            this.txtId = new System.Windows.Forms.TextBox();
+            this.lblID = new System.Windows.Forms.Label();
+            this.lblEstadoCivil = new System.Windows.Forms.Label();
+            this.txtCalleHogar = new System.Windows.Forms.TextBox();
+            this.lblCalleHogar = new System.Windows.Forms.Label();
+            this.txtDNI = new System.Windows.Forms.TextBox();
+            this.cmbEstadoCivil = new System.Windows.Forms.ComboBox();
+            this.lblDNI = new System.Windows.Forms.Label();
             this.lblCargo = new System.Windows.Forms.Label();
             this.txtContraseña = new System.Windows.Forms.TextBox();
             this.lblContraseña = new System.Windows.Forms.Label();
             this.txtNombre = new System.Windows.Forms.TextBox();
             this.cmbCargo = new System.Windows.Forms.ComboBox();
             this.lblNombre = new System.Windows.Forms.Label();
+            this.btnEliminarUsuario = new System.Windows.Forms.Button();
+            this.btnModificarUsuario = new System.Windows.Forms.Button();
             this.btnRegistrarUsuario = new System.Windows.Forms.Button();
-            this.lblEstadoCivil = new System.Windows.Forms.Label();
-            this.txtCalleHogar = new System.Windows.Forms.TextBox();
-            this.lblCalleHogar = new System.Windows.Forms.Label();
-            this.txtDNI = new System.Windows.Forms.TextBox();
-            this.lblDNI = new System.Windows.Forms.Label();
-            this.txtId = new System.Windows.Forms.TextBox();
-            this.lblID = new System.Windows.Forms.Label();
-            this.cmbEstadoCivil = new System.Windows.Forms.ComboBox();
-            this.lblSueldo = new System.Windows.Forms.Label();
-            this.btnBuscarId = new System.Windows.Forms.Button();
-            this.txtSueldo = new System.Windows.Forms.TextBox();
+            this.btnRecargarGrilla = new System.Windows.Forms.Button();
+            this.btnLimpiarCampos = new System.Windows.Forms.Button();
+            this.imageList1 = new System.Windows.Forms.ImageList(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.dgvUsuarios)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
@@ -64,6 +69,8 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.btnRecargarGrilla);
+            this.groupBox1.Controls.Add(this.btnLimpiarCampos);
             this.groupBox1.Controls.Add(this.txtSueldo);
             this.groupBox1.Controls.Add(this.btnBuscarId);
             this.groupBox1.Controls.Add(this.lblSueldo);
@@ -88,27 +95,107 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Gestionar Usuario";
             // 
-            // btnEliminarUsuario
+            // txtSueldo
             // 
-            this.btnEliminarUsuario.Font = new System.Drawing.Font("Javanese Text", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnEliminarUsuario.Location = new System.Drawing.Point(19, 587);
-            this.btnEliminarUsuario.Name = "btnEliminarUsuario";
-            this.btnEliminarUsuario.Size = new System.Drawing.Size(162, 35);
-            this.btnEliminarUsuario.TabIndex = 8;
-            this.btnEliminarUsuario.Text = "Eliminar Usuario";
-            this.btnEliminarUsuario.UseVisualStyleBackColor = true;
-            this.btnEliminarUsuario.Click += new System.EventHandler(this.btnEliminarUsuario_Click);
+            this.txtSueldo.Font = new System.Drawing.Font("Javanese Text", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtSueldo.Location = new System.Drawing.Point(162, 428);
+            this.txtSueldo.Name = "txtSueldo";
+            this.txtSueldo.Size = new System.Drawing.Size(188, 42);
+            this.txtSueldo.TabIndex = 20;
             // 
-            // btnModificarUsuario
+            // btnBuscarId
             // 
-            this.btnModificarUsuario.Font = new System.Drawing.Font("Javanese Text", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnModificarUsuario.Location = new System.Drawing.Point(187, 587);
-            this.btnModificarUsuario.Name = "btnModificarUsuario";
-            this.btnModificarUsuario.Size = new System.Drawing.Size(162, 35);
-            this.btnModificarUsuario.TabIndex = 7;
-            this.btnModificarUsuario.Text = "Modificar Usuario";
-            this.btnModificarUsuario.UseVisualStyleBackColor = true;
-            this.btnModificarUsuario.Click += new System.EventHandler(this.btnModificarUsuario_Click);
+            this.btnBuscarId.Font = new System.Drawing.Font("Javanese Text", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnBuscarId.Location = new System.Drawing.Point(259, 24);
+            this.btnBuscarId.Name = "btnBuscarId";
+            this.btnBuscarId.Size = new System.Drawing.Size(162, 35);
+            this.btnBuscarId.TabIndex = 19;
+            this.btnBuscarId.Text = "Buscar ID";
+            this.btnBuscarId.UseVisualStyleBackColor = true;
+            this.btnBuscarId.Click += new System.EventHandler(this.btnBuscarId_Click);
+            // 
+            // lblSueldo
+            // 
+            this.lblSueldo.AutoSize = true;
+            this.lblSueldo.Font = new System.Drawing.Font("Javanese Text", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblSueldo.Location = new System.Drawing.Point(22, 428);
+            this.lblSueldo.Name = "lblSueldo";
+            this.lblSueldo.Size = new System.Drawing.Size(87, 43);
+            this.lblSueldo.TabIndex = 18;
+            this.lblSueldo.Text = "Sueldo:";
+            // 
+            // txtId
+            // 
+            this.txtId.Font = new System.Drawing.Font("Javanese Text", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtId.Location = new System.Drawing.Point(162, 19);
+            this.txtId.Name = "txtId";
+            this.txtId.Size = new System.Drawing.Size(82, 42);
+            this.txtId.TabIndex = 14;
+            // 
+            // lblID
+            // 
+            this.lblID.AutoSize = true;
+            this.lblID.Font = new System.Drawing.Font("Javanese Text", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblID.Location = new System.Drawing.Point(22, 19);
+            this.lblID.Name = "lblID";
+            this.lblID.Size = new System.Drawing.Size(48, 43);
+            this.lblID.TabIndex = 13;
+            this.lblID.Text = "ID:";
+            // 
+            // lblEstadoCivil
+            // 
+            this.lblEstadoCivil.AutoSize = true;
+            this.lblEstadoCivil.Font = new System.Drawing.Font("Javanese Text", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblEstadoCivil.Location = new System.Drawing.Point(6, 366);
+            this.lblEstadoCivil.Name = "lblEstadoCivil";
+            this.lblEstadoCivil.Size = new System.Drawing.Size(137, 43);
+            this.lblEstadoCivil.TabIndex = 12;
+            this.lblEstadoCivil.Text = "Estado Civil:";
+            // 
+            // txtCalleHogar
+            // 
+            this.txtCalleHogar.Font = new System.Drawing.Font("Javanese Text", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtCalleHogar.Location = new System.Drawing.Point(165, 307);
+            this.txtCalleHogar.Name = "txtCalleHogar";
+            this.txtCalleHogar.Size = new System.Drawing.Size(188, 42);
+            this.txtCalleHogar.TabIndex = 11;
+            // 
+            // lblCalleHogar
+            // 
+            this.lblCalleHogar.AutoSize = true;
+            this.lblCalleHogar.Font = new System.Drawing.Font("Javanese Text", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblCalleHogar.Location = new System.Drawing.Point(6, 306);
+            this.lblCalleHogar.Name = "lblCalleHogar";
+            this.lblCalleHogar.Size = new System.Drawing.Size(126, 43);
+            this.lblCalleHogar.TabIndex = 10;
+            this.lblCalleHogar.Text = "CalleHogar:";
+            // 
+            // txtDNI
+            // 
+            this.txtDNI.Font = new System.Drawing.Font("Javanese Text", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtDNI.Location = new System.Drawing.Point(165, 250);
+            this.txtDNI.Name = "txtDNI";
+            this.txtDNI.Size = new System.Drawing.Size(188, 42);
+            this.txtDNI.TabIndex = 9;
+            // 
+            // cmbEstadoCivil
+            // 
+            this.cmbEstadoCivil.Font = new System.Drawing.Font("Javanese Text", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cmbEstadoCivil.FormattingEnabled = true;
+            this.cmbEstadoCivil.Location = new System.Drawing.Point(165, 366);
+            this.cmbEstadoCivil.Name = "cmbEstadoCivil";
+            this.cmbEstadoCivil.Size = new System.Drawing.Size(188, 42);
+            this.cmbEstadoCivil.TabIndex = 8;
+            // 
+            // lblDNI
+            // 
+            this.lblDNI.AutoSize = true;
+            this.lblDNI.Font = new System.Drawing.Font("Javanese Text", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblDNI.Location = new System.Drawing.Point(17, 250);
+            this.lblDNI.Name = "lblDNI";
+            this.lblDNI.Size = new System.Drawing.Size(63, 43);
+            this.lblDNI.TabIndex = 7;
+            this.lblDNI.Text = "DNI:";
             // 
             // lblCargo
             // 
@@ -165,6 +252,28 @@
             this.lblNombre.TabIndex = 1;
             this.lblNombre.Text = "Nombre:";
             // 
+            // btnEliminarUsuario
+            // 
+            this.btnEliminarUsuario.Font = new System.Drawing.Font("Javanese Text", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnEliminarUsuario.Location = new System.Drawing.Point(19, 587);
+            this.btnEliminarUsuario.Name = "btnEliminarUsuario";
+            this.btnEliminarUsuario.Size = new System.Drawing.Size(162, 35);
+            this.btnEliminarUsuario.TabIndex = 8;
+            this.btnEliminarUsuario.Text = "Eliminar Usuario";
+            this.btnEliminarUsuario.UseVisualStyleBackColor = true;
+            this.btnEliminarUsuario.Click += new System.EventHandler(this.btnEliminarUsuario_Click);
+            // 
+            // btnModificarUsuario
+            // 
+            this.btnModificarUsuario.Font = new System.Drawing.Font("Javanese Text", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnModificarUsuario.Location = new System.Drawing.Point(187, 587);
+            this.btnModificarUsuario.Name = "btnModificarUsuario";
+            this.btnModificarUsuario.Size = new System.Drawing.Size(162, 35);
+            this.btnModificarUsuario.TabIndex = 7;
+            this.btnModificarUsuario.Text = "Modificar Usuario";
+            this.btnModificarUsuario.UseVisualStyleBackColor = true;
+            this.btnModificarUsuario.Click += new System.EventHandler(this.btnModificarUsuario_Click);
+            // 
             // btnRegistrarUsuario
             // 
             this.btnRegistrarUsuario.Font = new System.Drawing.Font("Javanese Text", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -176,107 +285,64 @@
             this.btnRegistrarUsuario.UseVisualStyleBackColor = true;
             this.btnRegistrarUsuario.Click += new System.EventHandler(this.btnRegistrarUsuario_Click);
             // 
-            // lblEstadoCivil
+            // btnRecargarGrilla
             // 
-            this.lblEstadoCivil.AutoSize = true;
-            this.lblEstadoCivil.Font = new System.Drawing.Font("Javanese Text", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblEstadoCivil.Location = new System.Drawing.Point(6, 366);
-            this.lblEstadoCivil.Name = "lblEstadoCivil";
-            this.lblEstadoCivil.Size = new System.Drawing.Size(137, 43);
-            this.lblEstadoCivil.TabIndex = 12;
-            this.lblEstadoCivil.Text = "Estado Civil:";
+            this.btnRecargarGrilla.BackColor = System.Drawing.Color.Transparent;
+            this.btnRecargarGrilla.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btnRecargarGrilla.Font = new System.Drawing.Font("Javanese Text", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnRecargarGrilla.Image = global::pryLunaM_IEFI.Properties.Resources.Recargar_2;
+            this.btnRecargarGrilla.Location = new System.Drawing.Point(181, 495);
+            this.btnRecargarGrilla.Name = "btnRecargarGrilla";
+            this.btnRecargarGrilla.Size = new System.Drawing.Size(40, 38);
+            this.btnRecargarGrilla.TabIndex = 21;
+            this.btnRecargarGrilla.UseVisualStyleBackColor = false;
             // 
-            // txtCalleHogar
+            // btnLimpiarCampos
             // 
-            this.txtCalleHogar.Font = new System.Drawing.Font("Javanese Text", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtCalleHogar.Location = new System.Drawing.Point(165, 307);
-            this.txtCalleHogar.Name = "txtCalleHogar";
-            this.txtCalleHogar.Size = new System.Drawing.Size(188, 42);
-            this.txtCalleHogar.TabIndex = 11;
+            this.btnLimpiarCampos.BackColor = System.Drawing.Color.Transparent;
+            this.btnLimpiarCampos.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btnLimpiarCampos.Font = new System.Drawing.Font("Javanese Text", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnLimpiarCampos.Image = global::pryLunaM_IEFI.Properties.Resources.LimpiarCampos;
+            this.btnLimpiarCampos.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnLimpiarCampos.Location = new System.Drawing.Point(6, 495);
+            this.btnLimpiarCampos.Name = "btnLimpiarCampos";
+            this.btnLimpiarCampos.Size = new System.Drawing.Size(169, 38);
+            this.btnLimpiarCampos.TabIndex = 9;
+            this.btnLimpiarCampos.Text = "Limpiar Campos";
+            this.btnLimpiarCampos.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnLimpiarCampos.UseVisualStyleBackColor = false;
             // 
-            // lblCalleHogar
+            // imageList1
             // 
-            this.lblCalleHogar.AutoSize = true;
-            this.lblCalleHogar.Font = new System.Drawing.Font("Javanese Text", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblCalleHogar.Location = new System.Drawing.Point(6, 306);
-            this.lblCalleHogar.Name = "lblCalleHogar";
-            this.lblCalleHogar.Size = new System.Drawing.Size(126, 43);
-            this.lblCalleHogar.TabIndex = 10;
-            this.lblCalleHogar.Text = "CalleHogar:";
-            // 
-            // txtDNI
-            // 
-            this.txtDNI.Font = new System.Drawing.Font("Javanese Text", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtDNI.Location = new System.Drawing.Point(165, 250);
-            this.txtDNI.Name = "txtDNI";
-            this.txtDNI.Size = new System.Drawing.Size(188, 42);
-            this.txtDNI.TabIndex = 9;
-            // 
-            // lblDNI
-            // 
-            this.lblDNI.AutoSize = true;
-            this.lblDNI.Font = new System.Drawing.Font("Javanese Text", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblDNI.Location = new System.Drawing.Point(17, 250);
-            this.lblDNI.Name = "lblDNI";
-            this.lblDNI.Size = new System.Drawing.Size(63, 43);
-            this.lblDNI.TabIndex = 7;
-            this.lblDNI.Text = "DNI:";
-            // 
-            // txtId
-            // 
-            this.txtId.Font = new System.Drawing.Font("Javanese Text", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtId.Location = new System.Drawing.Point(162, 19);
-            this.txtId.Name = "txtId";
-            this.txtId.Size = new System.Drawing.Size(82, 42);
-            this.txtId.TabIndex = 14;
-            // 
-            // lblID
-            // 
-            this.lblID.AutoSize = true;
-            this.lblID.Font = new System.Drawing.Font("Javanese Text", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblID.Location = new System.Drawing.Point(22, 19);
-            this.lblID.Name = "lblID";
-            this.lblID.Size = new System.Drawing.Size(48, 43);
-            this.lblID.TabIndex = 13;
-            this.lblID.Text = "ID:";
-            // 
-            // cmbEstadoCivil
-            // 
-            this.cmbEstadoCivil.Font = new System.Drawing.Font("Javanese Text", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cmbEstadoCivil.FormattingEnabled = true;
-            this.cmbEstadoCivil.Location = new System.Drawing.Point(165, 366);
-            this.cmbEstadoCivil.Name = "cmbEstadoCivil";
-            this.cmbEstadoCivil.Size = new System.Drawing.Size(188, 42);
-            this.cmbEstadoCivil.TabIndex = 8;
-            // 
-            // lblSueldo
-            // 
-            this.lblSueldo.AutoSize = true;
-            this.lblSueldo.Font = new System.Drawing.Font("Javanese Text", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblSueldo.Location = new System.Drawing.Point(22, 428);
-            this.lblSueldo.Name = "lblSueldo";
-            this.lblSueldo.Size = new System.Drawing.Size(87, 43);
-            this.lblSueldo.TabIndex = 18;
-            this.lblSueldo.Text = "Sueldo:";
-            // 
-            // btnBuscarId
-            // 
-            this.btnBuscarId.Font = new System.Drawing.Font("Javanese Text", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnBuscarId.Location = new System.Drawing.Point(259, 24);
-            this.btnBuscarId.Name = "btnBuscarId";
-            this.btnBuscarId.Size = new System.Drawing.Size(162, 35);
-            this.btnBuscarId.TabIndex = 19;
-            this.btnBuscarId.Text = "Buscar ID";
-            this.btnBuscarId.UseVisualStyleBackColor = true;
-            this.btnBuscarId.Click += new System.EventHandler(this.btnBuscarId_Click);
-            // 
-            // txtSueldo
-            // 
-            this.txtSueldo.Font = new System.Drawing.Font("Javanese Text", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtSueldo.Location = new System.Drawing.Point(162, 428);
-            this.txtSueldo.Name = "txtSueldo";
-            this.txtSueldo.Size = new System.Drawing.Size(188, 42);
-            this.txtSueldo.TabIndex = 20;
+            this.imageList1.ImageStream = ((System.Windows.Forms.ImageListStreamer)(resources.GetObject("imageList1.ImageStream")));
+            this.imageList1.TransparentColor = System.Drawing.Color.Transparent;
+            this.imageList1.Images.SetKeyName(0, "1_fseafaww1.jpg");
+            this.imageList1.Images.SetKeyName(1, "11_aswasdas1.jpg");
+            this.imageList1.Images.SetKeyName(2, "abstract-view-modern-architecture.jpg");
+            this.imageList1.Images.SetKeyName(3, "add_8532597.png");
+            this.imageList1.Images.SetKeyName(4, "add-button_10703134.png");
+            this.imageList1.Images.SetKeyName(5, "ContraseñaVisible.png.png");
+            this.imageList1.Images.SetKeyName(6, "creativity_7407522.png");
+            this.imageList1.Images.SetKeyName(7, "delete_6861362.png");
+            this.imageList1.Images.SetKeyName(8, "duplicate_12108396.png");
+            this.imageList1.Images.SetKeyName(9, "edit_8273154.png");
+            this.imageList1.Images.SetKeyName(10, "Ejemplo de grafo 1.png");
+            this.imageList1.Images.SetKeyName(11, "Ejemplo de grafo 2.jpg");
+            this.imageList1.Images.SetKeyName(12, "email_16513874.png");
+            this.imageList1.Images.SetKeyName(13, "engineering_18642986.png");
+            this.imageList1.Images.SetKeyName(14, "freepik__upload__41513.png");
+            this.imageList1.Images.SetKeyName(15, "geometria-3d_3840x2160_xtrafondos.com.jpg");
+            this.imageList1.Images.SetKeyName(16, "Icono de luna 1.ico");
+            this.imageList1.Images.SetKeyName(17, "Icono de luna 2.ico");
+            this.imageList1.Images.SetKeyName(18, "LimpiarCampos.png");
+            this.imageList1.Images.SetKeyName(19, "luca-bravo-g_LG9LGyTk8-unsplash.jpg");
+            this.imageList1.Images.SetKeyName(20, "ondas-azules_5120x2880_xtrafondos.com.jpg");
+            this.imageList1.Images.SetKeyName(21, "pencil_10296476.png");
+            this.imageList1.Images.SetKeyName(22, "Recargar 2.png");
+            this.imageList1.Images.SetKeyName(23, "refresh 1.png");
+            this.imageList1.Images.SetKeyName(24, "Reprecentacion de una Cola.jpg");
+            this.imageList1.Images.SetKeyName(25, "Reprecentacion de una Pila.jpg");
+            this.imageList1.Images.SetKeyName(26, "Representacion de Listas Simples Entrelazadas.jpg");
             // 
             // frmGestionUsuarios
             // 
@@ -323,5 +389,8 @@
         private System.Windows.Forms.Button btnBuscarId;
         private System.Windows.Forms.Label lblSueldo;
         private System.Windows.Forms.TextBox txtSueldo;
+        private System.Windows.Forms.Button btnRecargarGrilla;
+        private System.Windows.Forms.Button btnLimpiarCampos;
+        private System.Windows.Forms.ImageList imageList1;
     }
 }

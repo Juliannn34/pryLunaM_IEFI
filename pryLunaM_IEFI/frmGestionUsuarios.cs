@@ -132,9 +132,9 @@ namespace pryLunaM_IEFI
         {
             try
             {
-
                 clsUsuarios usuario = new clsUsuarios
                 {
+                    Id = Convert.ToInt32(txtId.Text), // 👈 Aquí se añade la asignación del ID
                     Nombre = txtNombre.Text,
                     Contraseña = txtContraseña.Text,
                     Cargo = cmbCargo.Text,
@@ -144,7 +144,6 @@ namespace pryLunaM_IEFI
                     Sueldo = Convert.ToDecimal(txtSueldo.Text)
                 };
 
-                // Conectar y modificar
                 clsConexionBD conexion = new clsConexionBD();
                 bool exito = conexion.ModificarUsuario(usuario);
 
