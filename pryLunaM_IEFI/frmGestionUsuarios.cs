@@ -42,17 +42,30 @@ namespace pryLunaM_IEFI
         }
 
 
-
+        public void RecargarGrilla()
+        {
+            clsConexionBD objConexion = new clsConexionBD();
+            dgvUsuarios.DataSource = objConexion.ObtenerUsuarios();
+        }
 
         //-------------------------------- BOTONES PRINCIPALES ---------------------------------
 
         private void btnBuscarId_Click(object sender, EventArgs e)
         {
+            int Id = Convert.ToInt16(txtId.Text);
+
+
+            clsConexionBD conectarBD = new clsConexionBD();
+
+            conectarBD.BuscarUsuarioPorID(Id, txtNombre, txtContraseña, cmbCargo,
+                txtDNI, txtCalleHogar, cmbEstadoCivil, txtSueldo);
+
+
             if (int.TryParse(txtId.Text, out int id))
             {
-                clsConexionBD conectarBD = new clsConexionBD();
+                
 
-                // Llamada al nuevo método BuscarIDUsuario (que deberías crear en clsConexionBD)
+                
                 conectarBD.BuscarUsuarioPorID(
                     id,
                     txtNombre,
@@ -64,7 +77,7 @@ namespace pryLunaM_IEFI
                     txtSueldo
                 );
 
-                // Verificás si no se encontró el usuario
+               
                 if (string.IsNullOrWhiteSpace(txtNombre.Text))
                 {
                     MessageBox.Show("No se encontró un usuario con ese ID.", "Atención", MessageBoxButtons.OK, MessageBoxIcon.Warning);
@@ -97,7 +110,7 @@ namespace pryLunaM_IEFI
                 objConexion.AgregarUsuario(nuevoUsuario);
 
                 // Refrescar grilla de usuarios
-                dgvUsuarios.DataSource = objConexion.ObtenerUsuarios();
+                RecargarGrilla();
 
                 // Limpiar campos
                 txtNombre.Clear();
@@ -117,13 +130,61 @@ namespace pryLunaM_IEFI
 
         private void btnModificarUsuario_Click(object sender, EventArgs e)
         {
+            try
+            {
 
+                clsUsuarios usuario = new clsUsuarios
+                {
+                    Nombre = txtNombre.Text,
+                    Contraseña = txtContraseña.Text,
+                    Cargo = cmbCargo.Text,
+                    DNI = txtDNI.Text,
+                    CalleHogar = txtCalleHogar.Text,
+                    EstadoCivil = cmbEstadoCivil.Text,
+                    Sueldo = Convert.ToDecimal(txtSueldo.Text)
+                };
+
+                // Conectar y modificar
+                clsConexionBD conexion = new clsConexionBD();
+                bool exito = conexion.ModificarUsuario(usuario);
+
+                if (exito)
+                {
+                    MessageBox.Show("Usuario modificado correctamente.", "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    dgvUsuarios.DataSource = conexion.ObtenerUsuarios();
+                }
+                else
+                {
+                    MessageBox.Show("No se pudo modificar el usuario.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+
+                RecargarGrilla();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Ocurrió un error al modificar el usuario: " + ex.Message, "Error inesperado", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
 
 
         private void btnEliminarUsuario_Click(object sender, EventArgs e)
         {
+            if (!int.TryParse(txtId.Text, out int id))
+            {
+                MessageBox.Show("ID inválido.");
+                return;
+            }
 
+            DialogResult resultado = MessageBox.Show("¿Estás seguro que quieres eliminar este registro?",
+                                                     "Eliminar contacto", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+
+            if (resultado == DialogResult.Yes)
+            {
+                clsConexionBD conexion = new clsConexionBD();
+                conexion.EliminarUsuario(id);
+                RecargarGrilla();       
+
+            }
         }
 
         

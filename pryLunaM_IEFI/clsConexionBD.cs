@@ -119,7 +119,7 @@ namespace pryLunaM_IEFI
                 cmd.Parameters.AddWithValue("@Contraseña", usuario.Contraseña);
                 cmd.Parameters.AddWithValue("@Cargo", usuario.Cargo);
                 cmd.Parameters.AddWithValue("@DNI", usuario.DNI);
-                cmd.Parameters.AddWithValue("@CalleHogar", (object)usuario.CalleHogar ?? DBNull.Value);
+                cmd.Parameters.AddWithValue("@CalleHogar", usuario.CalleHogar);
                 cmd.Parameters.AddWithValue("@EstadoCivil", usuario.EstadoCivil);
                 cmd.Parameters.AddWithValue("@Sueldo", usuario.Sueldo);
                 cmd.Parameters.AddWithValue("@ID", usuario.Id);
