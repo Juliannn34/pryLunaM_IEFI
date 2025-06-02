@@ -39,6 +39,8 @@
             this.lblFechaDeIngreso = new System.Windows.Forms.Label();
             this.pnlAuditoria = new System.Windows.Forms.Panel();
             this.timerTiempoTrabajo = new System.Windows.Forms.Timer(this.components);
+            this.registrarTareasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.listarTareasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -55,8 +57,11 @@
             // 
             // tareasToolStripMenuItem
             // 
+            this.tareasToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.registrarTareasToolStripMenuItem,
+            this.listarTareasToolStripMenuItem});
             this.tareasToolStripMenuItem.Name = "tareasToolStripMenuItem";
-            this.tareasToolStripMenuItem.Size = new System.Drawing.Size(61, 20);
+            this.tareasToolStripMenuItem.Size = new System.Drawing.Size(60, 20);
             this.tareasToolStripMenuItem.Text = "Tareas...";
             // 
             // administraciónToolStripMenuItem
@@ -122,6 +127,20 @@
             // 
             this.timerTiempoTrabajo.Tick += new System.EventHandler(this.timerTiempoTrabajo_Tick);
             // 
+            // registrarTareasToolStripMenuItem
+            // 
+            this.registrarTareasToolStripMenuItem.Name = "registrarTareasToolStripMenuItem";
+            this.registrarTareasToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.registrarTareasToolStripMenuItem.Text = "Registrar Tareas...";
+            this.registrarTareasToolStripMenuItem.Click += new System.EventHandler(this.registrarTareasToolStripMenuItem_Click);
+            // 
+            // listarTareasToolStripMenuItem
+            // 
+            this.listarTareasToolStripMenuItem.Name = "listarTareasToolStripMenuItem";
+            this.listarTareasToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.listarTareasToolStripMenuItem.Text = "Listar Tareas...";
+            this.listarTareasToolStripMenuItem.Click += new System.EventHandler(this.listarTareasToolStripMenuItem_Click);
+            // 
             // frmPrincipal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -159,5 +178,7 @@
         private System.Windows.Forms.Label lblFechaDeIngreso;
         private System.Windows.Forms.Panel pnlAuditoria;
         private System.Windows.Forms.Timer timerTiempoTrabajo;
+        private System.Windows.Forms.ToolStripMenuItem registrarTareasToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem listarTareasToolStripMenuItem;
     }
 }

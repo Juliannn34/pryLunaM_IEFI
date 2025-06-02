@@ -51,6 +51,17 @@ namespace pryLunaM_IEFI
             AuditoriaVentana.ShowDialog();
         }
 
+        private void registrarTareasToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmRegistrarTarea RegistrarTarea_Ventana = new frmRegistrarTarea();
+            RegistrarTarea_Ventana.ShowDialog();
+        }
+
+        private void listarTareasToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmListarTarea ListarTareas_Ventana = new frmListarTarea();
+            ListarTareas_Ventana.ShowDialog();
+        }
 
         //-----------------------------------------CODIGO AUDITORIA------------------------------------------------------------
 
@@ -126,7 +137,9 @@ namespace pryLunaM_IEFI
             }
         }
 
-        
+       
+
+
 
         //---------------------------------------------------------------------------------------------------------------------
 
