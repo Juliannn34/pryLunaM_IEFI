@@ -213,7 +213,140 @@ namespace pryLunaM_IEFI
 
 
 
+        //-----------------------------------------------------------------------------------
 
+        //Tabla Tareas//
+
+
+        public DataTable ObtenerTareas()
+        {
+            DataTable tabla = new DataTable();
+
+            try
+            {
+                using (SqlConnection conn = new SqlConnection(cadenaConexion))
+                {
+                    conn.Open();
+
+                    string consulta = @"
+                        SELECT 
+                            tt.Nombre AS Tarea, 
+                            t.Fecha AS Fecha, 
+                            l.Nombre AS Lugar
+                        FROM Tareas t
+                        INNER JOIN TipoTarea tt ON t.TipoTareaID = tt.ID
+                        INNER JOIN Lugar l ON t.LugarID = l.ID";
+
+                    using (SqlCommand cmd = new SqlCommand(consulta, conn))
+                    {
+                        SqlDataAdapter adaptador = new SqlDataAdapter(cmd);
+                        adaptador.Fill(tabla);
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error al obtener tareas: " + ex.Message);
+            }
+
+            return tabla;
+        }
+
+        public void AgregarTarea(clsTareas tarea)
+        {
+            try
+            {
+                using (SqlConnection conn = new SqlConnection(cadenaConexion))
+                {
+                    conn.Open();
+                    string query = @"INSERT INTO Tareas 
+                            (TipoTareaID, Fecha, LugarID, 
+                             UniformeInsumo, LicenciaEstudio, LicenciaVacaciones, 
+                             ReclamoSalario, ReclamoRecibo, Comentario) 
+                             VALUES 
+                            (@TipoTareaID, @Fecha, @LugarID, 
+                             @UniformeInsumo, @LicenciaEstudio, @LicenciaVacaciones, 
+                             @ReclamoSalario, @ReclamoRecibo, @Comentario)";
+
+                    using (SqlCommand cmd = new SqlCommand(query, conn))
+                    {
+                        cmd.Parameters.AddWithValue("@TipoTareaID", tarea.TipoTareaID);
+                        cmd.Parameters.AddWithValue("@Fecha", tarea.Fecha);
+                        cmd.Parameters.AddWithValue("@LugarID", tarea.LugarID);
+                        cmd.Parameters.AddWithValue("@UniformeInsumo", tarea.UniformeInsumo);
+                        cmd.Parameters.AddWithValue("@LicenciaEstudio", tarea.LicenciaEstudio);
+                        cmd.Parameters.AddWithValue("@LicenciaVacaciones", tarea.LicenciaVacaciones);
+                        cmd.Parameters.AddWithValue("@ReclamoSalario", tarea.ReclamoSalario);
+                        cmd.Parameters.AddWithValue("@ReclamoRecibo", tarea.ReclamoRecibo);
+                        cmd.Parameters.AddWithValue("@Comentario", string.IsNullOrEmpty(tarea.Comentario) ? DBNull.Value : (object)tarea.Comentario);
+
+                        cmd.ExecuteNonQuery();
+                    }
+                }
+
+                MessageBox.Show("Tarea agendada correctamente.");
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error al agendar la tarea: " + ex.Message);
+            }
+        }
+
+
+
+
+
+
+
+        //-----------------------------------------------------------------------------------
+
+
+        public DataTable ObtenerDatosDeTablaTipoTareas()
+        {
+            DataTable tablaTipoTarea = new DataTable();
+
+            try
+            {
+                using (SqlConnection conexion = new SqlConnection(cadenaConexion))
+                {
+                    conexion.Open();
+                    string consulta = "SELECT Nombre, Nombre FROM TipoTarea";
+                    SqlDataAdapter adaptador = new SqlDataAdapter(consulta, conexion);
+                    adaptador.Fill(tablaTipoTarea);
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error al obtener categorías: " + ex.Message);
+            }
+
+            return tablaTipoTarea;
+        }
+
+        public DataTable ObtenerDatosDeTablaLugares()
+        {
+            DataTable tablaLugar = new DataTable();
+
+            try
+            {
+                using (SqlConnection conexion = new SqlConnection(cadenaConexion))
+                {
+                    conexion.Open();
+                    string consulta = "SELECT Nombre, Nombre FROM Lugar";
+                    SqlDataAdapter adaptador = new SqlDataAdapter(consulta, conexion);
+                    adaptador.Fill(tablaLugar);
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error al obtener categorías: " + ex.Message);
+            }
+
+            return tablaLugar;
+        }
+
+
+        //-----------------------------------------------------------------------------------
 
     }
 }
