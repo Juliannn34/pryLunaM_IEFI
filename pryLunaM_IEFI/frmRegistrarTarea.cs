@@ -126,21 +126,31 @@ namespace pryLunaM_IEFI
 
         private void btnCancelar_Click(object sender, EventArgs e)
         {
-            cmbElegirTarea.SelectedIndex = -1;
-            cmbLugar.SelectedIndex = -1;
-            cmbTarea.SelectedIndex = -1;
+            DialogResult respuesta = MessageBox.Show("¿Estás seguro de que querés cancelar y borrar los datos ingresados?",
+                                             "Confirmar Cancelación",
+                                             MessageBoxButtons.YesNo,
+                                             MessageBoxIcon.Question);
 
-            chkInsumo.Checked = false;
-            chkLicenciaEstudio.Checked = false;
-            chkLicenciaVacaciones.Checked = false;
-            chkReclamoSalario.Checked = false;
-            chkReclamoRecibo.Checked = false;
 
-            txtComentario.Text = string.Empty;
-            txtNombreTarea.Text = string.Empty; 
-            
+            if (respuesta == DialogResult.Yes)
+            {
+                cmbElegirTarea.SelectedIndex = -1;
+                cmbLugar.SelectedIndex = -1;
+                cmbTarea.SelectedIndex = -1;
 
-            txtNombreTarea.Focus();
+                chkInsumo.Checked = false;
+                chkLicenciaEstudio.Checked = false;
+                chkLicenciaVacaciones.Checked = false;
+                chkReclamoSalario.Checked = false;
+                chkReclamoRecibo.Checked = false;
+
+                txtComentario.Text = string.Empty;
+                txtNombreTarea.Text = string.Empty;
+
+
+                txtNombreTarea.Focus();
+            }
+              
         }
         //---------------------------------------------------------------------------------------
     }
