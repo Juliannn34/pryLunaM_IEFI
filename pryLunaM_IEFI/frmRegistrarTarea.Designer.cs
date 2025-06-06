@@ -48,13 +48,18 @@
             this.btnCancelar = new System.Windows.Forms.Button();
             this.btnGrabar = new System.Windows.Forms.Button();
             this.txtComentario = new System.Windows.Forms.TextBox();
+            this.lblNombreTarea = new System.Windows.Forms.Label();
+            this.txtNombreTarea = new System.Windows.Forms.TextBox();
+            this.lblElegirTarea = new System.Windows.Forms.Label();
+            this.cmbElegirTarea = new System.Windows.Forms.ComboBox();
+            this.checkBox1 = new System.Windows.Forms.CheckBox();
             ((System.ComponentModel.ISupportInitialize)(this.dgvTarea)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
             // btnAgendar
             // 
-            this.btnAgendar.Location = new System.Drawing.Point(398, 28);
+            this.btnAgendar.Location = new System.Drawing.Point(218, 127);
             this.btnAgendar.Name = "btnAgendar";
             this.btnAgendar.Size = new System.Drawing.Size(143, 29);
             this.btnAgendar.TabIndex = 0;
@@ -65,7 +70,7 @@
             // lblFecha
             // 
             this.lblFecha.AutoSize = true;
-            this.lblFecha.Location = new System.Drawing.Point(51, 36);
+            this.lblFecha.Location = new System.Drawing.Point(294, 30);
             this.lblFecha.Name = "lblFecha";
             this.lblFecha.Size = new System.Drawing.Size(40, 13);
             this.lblFecha.TabIndex = 1;
@@ -74,7 +79,7 @@
             // dtpFecha
             // 
             this.dtpFecha.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtpFecha.Location = new System.Drawing.Point(133, 30);
+            this.dtpFecha.Location = new System.Drawing.Point(350, 30);
             this.dtpFecha.Name = "dtpFecha";
             this.dtpFecha.Size = new System.Drawing.Size(121, 20);
             this.dtpFecha.TabIndex = 2;
@@ -82,7 +87,7 @@
             // cmbTarea
             // 
             this.cmbTarea.FormattingEnabled = true;
-            this.cmbTarea.Location = new System.Drawing.Point(133, 73);
+            this.cmbTarea.Location = new System.Drawing.Point(149, 67);
             this.cmbTarea.Name = "cmbTarea";
             this.cmbTarea.Size = new System.Drawing.Size(121, 21);
             this.cmbTarea.TabIndex = 3;
@@ -90,16 +95,16 @@
             // lblTarea
             // 
             this.lblTarea.AutoSize = true;
-            this.lblTarea.Location = new System.Drawing.Point(51, 75);
+            this.lblTarea.Location = new System.Drawing.Point(24, 67);
             this.lblTarea.Name = "lblTarea";
-            this.lblTarea.Size = new System.Drawing.Size(38, 13);
+            this.lblTarea.Size = new System.Drawing.Size(77, 13);
             this.lblTarea.TabIndex = 4;
-            this.lblTarea.Text = "Tarea:";
+            this.lblTarea.Text = "Tipo de Tarea:";
             // 
             // cmbLugar
             // 
             this.cmbLugar.FormattingEnabled = true;
-            this.cmbLugar.Location = new System.Drawing.Point(133, 131);
+            this.cmbLugar.Location = new System.Drawing.Point(350, 64);
             this.cmbLugar.Name = "cmbLugar";
             this.cmbLugar.Size = new System.Drawing.Size(121, 21);
             this.cmbLugar.TabIndex = 6;
@@ -107,7 +112,7 @@
             // lblLugar
             // 
             this.lblLugar.AutoSize = true;
-            this.lblLugar.Location = new System.Drawing.Point(51, 131);
+            this.lblLugar.Location = new System.Drawing.Point(294, 67);
             this.lblLugar.Name = "lblLugar";
             this.lblLugar.Size = new System.Drawing.Size(37, 13);
             this.lblLugar.TabIndex = 5;
@@ -116,13 +121,16 @@
             // dgvTarea
             // 
             this.dgvTarea.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvTarea.Location = new System.Drawing.Point(122, 177);
+            this.dgvTarea.Location = new System.Drawing.Point(96, 174);
             this.dgvTarea.Name = "dgvTarea";
-            this.dgvTarea.Size = new System.Drawing.Size(359, 124);
+            this.dgvTarea.Size = new System.Drawing.Size(445, 124);
             this.dgvTarea.TabIndex = 7;
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.checkBox1);
+            this.groupBox1.Controls.Add(this.cmbElegirTarea);
+            this.groupBox1.Controls.Add(this.lblElegirTarea);
             this.groupBox1.Controls.Add(this.chkReclamoRecibo);
             this.groupBox1.Controls.Add(this.chkReclamoSalario);
             this.groupBox1.Controls.Add(this.lblReclamo);
@@ -141,7 +149,7 @@
             // chkReclamoRecibo
             // 
             this.chkReclamoRecibo.AutoSize = true;
-            this.chkReclamoRecibo.Location = new System.Drawing.Point(162, 108);
+            this.chkReclamoRecibo.Location = new System.Drawing.Point(337, 105);
             this.chkReclamoRecibo.Name = "chkReclamoRecibo";
             this.chkReclamoRecibo.Size = new System.Drawing.Size(60, 17);
             this.chkReclamoRecibo.TabIndex = 18;
@@ -151,7 +159,7 @@
             // chkReclamoSalario
             // 
             this.chkReclamoSalario.AutoSize = true;
-            this.chkReclamoSalario.Location = new System.Drawing.Point(98, 109);
+            this.chkReclamoSalario.Location = new System.Drawing.Point(273, 106);
             this.chkReclamoSalario.Name = "chkReclamoSalario";
             this.chkReclamoSalario.Size = new System.Drawing.Size(58, 17);
             this.chkReclamoSalario.TabIndex = 16;
@@ -161,7 +169,7 @@
             // lblReclamo
             // 
             this.lblReclamo.AutoSize = true;
-            this.lblReclamo.Location = new System.Drawing.Point(36, 109);
+            this.lblReclamo.Location = new System.Drawing.Point(211, 106);
             this.lblReclamo.Name = "lblReclamo";
             this.lblReclamo.Size = new System.Drawing.Size(52, 13);
             this.lblReclamo.TabIndex = 15;
@@ -170,7 +178,7 @@
             // chkLicenciaVacaciones
             // 
             this.chkLicenciaVacaciones.AutoSize = true;
-            this.chkLicenciaVacaciones.Location = new System.Drawing.Point(162, 67);
+            this.chkLicenciaVacaciones.Location = new System.Drawing.Point(337, 64);
             this.chkLicenciaVacaciones.Name = "chkLicenciaVacaciones";
             this.chkLicenciaVacaciones.Size = new System.Drawing.Size(82, 17);
             this.chkLicenciaVacaciones.TabIndex = 14;
@@ -180,7 +188,7 @@
             // chkLicenciaEstudio
             // 
             this.chkLicenciaEstudio.AutoSize = true;
-            this.chkLicenciaEstudio.Location = new System.Drawing.Point(98, 68);
+            this.chkLicenciaEstudio.Location = new System.Drawing.Point(273, 65);
             this.chkLicenciaEstudio.Name = "chkLicenciaEstudio";
             this.chkLicenciaEstudio.Size = new System.Drawing.Size(61, 17);
             this.chkLicenciaEstudio.TabIndex = 12;
@@ -190,7 +198,7 @@
             // lblLicencia
             // 
             this.lblLicencia.AutoSize = true;
-            this.lblLicencia.Location = new System.Drawing.Point(36, 68);
+            this.lblLicencia.Location = new System.Drawing.Point(211, 65);
             this.lblLicencia.Name = "lblLicencia";
             this.lblLicencia.Size = new System.Drawing.Size(50, 13);
             this.lblLicencia.TabIndex = 11;
@@ -199,7 +207,7 @@
             // chkInsumo
             // 
             this.chkInsumo.AutoSize = true;
-            this.chkInsumo.Location = new System.Drawing.Point(98, 34);
+            this.chkInsumo.Location = new System.Drawing.Point(273, 31);
             this.chkInsumo.Name = "chkInsumo";
             this.chkInsumo.Size = new System.Drawing.Size(60, 17);
             this.chkInsumo.TabIndex = 10;
@@ -209,7 +217,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(36, 34);
+            this.label4.Location = new System.Drawing.Point(211, 31);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(52, 13);
             this.label4.TabIndex = 9;
@@ -243,23 +251,68 @@
             this.txtComentario.Size = new System.Drawing.Size(463, 94);
             this.txtComentario.TabIndex = 11;
             // 
+            // lblNombreTarea
+            // 
+            this.lblNombreTarea.AutoSize = true;
+            this.lblNombreTarea.Location = new System.Drawing.Point(24, 30);
+            this.lblNombreTarea.Name = "lblNombreTarea";
+            this.lblNombreTarea.Size = new System.Drawing.Size(104, 13);
+            this.lblNombreTarea.TabIndex = 12;
+            this.lblNombreTarea.Text = "Nombre de la Tarea:";
+            // 
+            // txtNombreTarea
+            // 
+            this.txtNombreTarea.Location = new System.Drawing.Point(149, 27);
+            this.txtNombreTarea.Name = "txtNombreTarea";
+            this.txtNombreTarea.Size = new System.Drawing.Size(121, 20);
+            this.txtNombreTarea.TabIndex = 13;
+            // 
+            // lblElegirTarea
+            // 
+            this.lblElegirTarea.AutoSize = true;
+            this.lblElegirTarea.Location = new System.Drawing.Point(36, 33);
+            this.lblElegirTarea.Name = "lblElegirTarea";
+            this.lblElegirTarea.Size = new System.Drawing.Size(67, 13);
+            this.lblElegirTarea.TabIndex = 14;
+            this.lblElegirTarea.Text = "Elegir Tarea:";
+            // 
+            // cmbElegirTarea
+            // 
+            this.cmbElegirTarea.FormattingEnabled = true;
+            this.cmbElegirTarea.Location = new System.Drawing.Point(39, 60);
+            this.cmbElegirTarea.Name = "cmbElegirTarea";
+            this.cmbElegirTarea.Size = new System.Drawing.Size(121, 21);
+            this.cmbElegirTarea.TabIndex = 14;
+            // 
+            // checkBox1
+            // 
+            this.checkBox1.AutoSize = true;
+            this.checkBox1.Location = new System.Drawing.Point(374, 19);
+            this.checkBox1.Name = "checkBox1";
+            this.checkBox1.Size = new System.Drawing.Size(82, 17);
+            this.checkBox1.TabIndex = 19;
+            this.checkBox1.Text = "Vacaciones";
+            this.checkBox1.UseVisualStyleBackColor = true;
+            // 
             // frmRegistrarTarea
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(610, 659);
+            this.Controls.Add(this.txtNombreTarea);
+            this.Controls.Add(this.lblNombreTarea);
             this.Controls.Add(this.txtComentario);
             this.Controls.Add(this.btnGrabar);
             this.Controls.Add(this.btnCancelar);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.dgvTarea);
             this.Controls.Add(this.cmbLugar);
+            this.Controls.Add(this.btnAgendar);
             this.Controls.Add(this.lblLugar);
             this.Controls.Add(this.lblTarea);
             this.Controls.Add(this.cmbTarea);
             this.Controls.Add(this.dtpFecha);
             this.Controls.Add(this.lblFecha);
-            this.Controls.Add(this.btnAgendar);
             this.Name = "frmRegistrarTarea";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Registrar Tarea";
@@ -294,5 +347,10 @@
         private System.Windows.Forms.Button btnCancelar;
         private System.Windows.Forms.Button btnGrabar;
         private System.Windows.Forms.TextBox txtComentario;
+        private System.Windows.Forms.Label lblNombreTarea;
+        private System.Windows.Forms.TextBox txtNombreTarea;
+        private System.Windows.Forms.Label lblElegirTarea;
+        private System.Windows.Forms.ComboBox cmbElegirTarea;
+        private System.Windows.Forms.CheckBox checkBox1;
     }
 }

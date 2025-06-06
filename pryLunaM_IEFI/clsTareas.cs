@@ -20,14 +20,14 @@ namespace pryLunaM_IEFI
         public bool ReclamoRecibo { get; set; }
 
         public string Comentario { get; set; }
-
+        public string Nombre { get; set; }
 
         public clsTareas() { }
 
         
         public clsTareas(int id, int tipoTareaID, DateTime fecha, int lugarID,
                         bool uniformeInsumo, bool licenciaEstudio, bool licenciaVacaciones,
-                        bool reclamoSalario, bool reclamoRecibo, string comentario)
+                        bool reclamoSalario, bool reclamoRecibo, string comentario, string nombre)
         {
             ID = id;
             TipoTareaID = tipoTareaID;
@@ -39,6 +39,7 @@ namespace pryLunaM_IEFI
             ReclamoSalario = reclamoSalario;
             ReclamoRecibo = reclamoRecibo;
             Comentario = comentario;
+            Nombre = nombre;    
         }
     }
 }

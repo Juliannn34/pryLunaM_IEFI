@@ -229,13 +229,14 @@ namespace pryLunaM_IEFI
                     conn.Open();
 
                     string consulta = @"
-                        SELECT 
-                            tt.Nombre AS Tarea, 
-                            t.Fecha AS Fecha, 
-                            l.Nombre AS Lugar
-                        FROM Tareas t
-                        INNER JOIN TipoTarea tt ON t.TipoTareaID = tt.ID
-                        INNER JOIN Lugar l ON t.LugarID = l.ID";
+                            SELECT 
+                                t.Nombre AS [Nombre de la Tarea],     -- Nuevo campo
+                                tt.Nombre AS Tarea, 
+                                t.Fecha AS Fecha, 
+                                l.Nombre AS Lugar
+                            FROM Tareas t
+                            INNER JOIN TipoTarea tt ON t.TipoTareaID = tt.ID
+                            INNER JOIN Lugar l ON t.LugarID = l.ID";
 
                     using (SqlCommand cmd = new SqlCommand(consulta, conn))
                     {
@@ -259,26 +260,18 @@ namespace pryLunaM_IEFI
                 using (SqlConnection conn = new SqlConnection(cadenaConexion))
                 {
                     conn.Open();
+
                     string query = @"INSERT INTO Tareas 
-                            (TipoTareaID, Fecha, LugarID, 
-                             UniformeInsumo, LicenciaEstudio, LicenciaVacaciones, 
-                             ReclamoSalario, ReclamoRecibo, Comentario) 
-                             VALUES 
-                            (@TipoTareaID, @Fecha, @LugarID, 
-                             @UniformeInsumo, @LicenciaEstudio, @LicenciaVacaciones, 
-                             @ReclamoSalario, @ReclamoRecibo, @Comentario)";
+                        (Nombre, TipoTareaID, Fecha, LugarID) 
+                        VALUES 
+                        (@Nombre, @TipoTareaID, @Fecha, @LugarID)";
 
                     using (SqlCommand cmd = new SqlCommand(query, conn))
                     {
+                        cmd.Parameters.AddWithValue("@Nombre", tarea.Nombre);
                         cmd.Parameters.AddWithValue("@TipoTareaID", tarea.TipoTareaID);
                         cmd.Parameters.AddWithValue("@Fecha", tarea.Fecha);
                         cmd.Parameters.AddWithValue("@LugarID", tarea.LugarID);
-                        cmd.Parameters.AddWithValue("@UniformeInsumo", tarea.UniformeInsumo);
-                        cmd.Parameters.AddWithValue("@LicenciaEstudio", tarea.LicenciaEstudio);
-                        cmd.Parameters.AddWithValue("@LicenciaVacaciones", tarea.LicenciaVacaciones);
-                        cmd.Parameters.AddWithValue("@ReclamoSalario", tarea.ReclamoSalario);
-                        cmd.Parameters.AddWithValue("@ReclamoRecibo", tarea.ReclamoRecibo);
-                        cmd.Parameters.AddWithValue("@Comentario", string.IsNullOrEmpty(tarea.Comentario) ? DBNull.Value : (object)tarea.Comentario);
 
                         cmd.ExecuteNonQuery();
                     }
@@ -288,7 +281,7 @@ namespace pryLunaM_IEFI
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Error al agendar la tarea: " + ex.Message);
+                MessageBox.Show("Error al agregar la tarea: " + ex.Message);
             }
         }
 
@@ -310,14 +303,14 @@ namespace pryLunaM_IEFI
                 using (SqlConnection conexion = new SqlConnection(cadenaConexion))
                 {
                     conexion.Open();
-                    string consulta = "SELECT Nombre, Nombre FROM TipoTarea";
+                    string consulta = "SELECT ID, Nombre AS Tarea FROM TipoTarea";
                     SqlDataAdapter adaptador = new SqlDataAdapter(consulta, conexion);
                     adaptador.Fill(tablaTipoTarea);
                 }
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Error al obtener categorías: " + ex.Message);
+                MessageBox.Show("Error al obtener tipo de tareas: " + ex.Message);
             }
 
             return tablaTipoTarea;
@@ -332,21 +325,74 @@ namespace pryLunaM_IEFI
                 using (SqlConnection conexion = new SqlConnection(cadenaConexion))
                 {
                     conexion.Open();
-                    string consulta = "SELECT Nombre, Nombre FROM Lugar";
+                    string consulta = "SELECT ID, Nombre AS Lugar FROM Lugar";
                     SqlDataAdapter adaptador = new SqlDataAdapter(consulta, conexion);
                     adaptador.Fill(tablaLugar);
                 }
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Error al obtener categorías: " + ex.Message);
+                MessageBox.Show("Error al obtener lugares: " + ex.Message);
             }
 
             return tablaLugar;
         }
 
+        public DataTable ObtenerTareasAgendadas()
+        {
+            DataTable tabla = new DataTable();
+
+            using (SqlConnection conexion = new SqlConnection(cadenaConexion))
+            {
+                string consulta = "SELECT ID, Nombre FROM Tareas";
+                using (SqlCommand comando = new SqlCommand(consulta, conexion))
+                {
+                    conexion.Open();
+                    SqlDataAdapter adaptador = new SqlDataAdapter(comando);
+                    adaptador.Fill(tabla);
+                }
+            }
+
+            return tabla;
+        }
+
+
 
         //-----------------------------------------------------------------------------------
 
+
+        public bool ModificarDetallesTarea(int id, bool insumo, bool licenciaEstudio, bool licenciaVacaciones, bool reclamoSalario, bool reclamoRecibo, string comentario)
+        {
+            using (SqlConnection conexion = new SqlConnection(cadenaConexion))
+            {
+                string consulta = @"UPDATE Tareas 
+                            SET UniformeInsumo = @insumo,
+                                LicenciaEstudio = @licenciaEstudio,
+                                LicenciaVacaciones = @licenciaVacaciones,
+                                ReclamoSalario = @reclamoSalario,
+                                ReclamoRecibo = @reclamoRecibo,
+                                Comentario = @comentario
+                            WHERE ID = @id";
+
+                using (SqlCommand comando = new SqlCommand(consulta, conexion))
+                {
+                    comando.Parameters.AddWithValue("@id", id);
+                    comando.Parameters.AddWithValue("@insumo", insumo);
+                    comando.Parameters.AddWithValue("@licenciaEstudio", licenciaEstudio);
+                    comando.Parameters.AddWithValue("@licenciaVacaciones", licenciaVacaciones);
+                    comando.Parameters.AddWithValue("@reclamoSalario", reclamoSalario);
+                    comando.Parameters.AddWithValue("@reclamoRecibo", reclamoRecibo);
+                    comando.Parameters.AddWithValue("@comentario", comentario ?? string.Empty); // evita null
+
+                    conexion.Open();
+                    int filasAfectadas = comando.ExecuteNonQuery();
+                    return filasAfectadas > 0;
+                }
+            }
+        }
+
+
+
+        //-----------------------------------------------------------------------------------
     }
 }
