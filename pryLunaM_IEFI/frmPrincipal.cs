@@ -34,14 +34,14 @@ namespace pryLunaM_IEFI
             lblFechaDeIngreso.Text = "Inicio: " + fechaInicio.ToString("dd/MM/yyyy HH:mm");
 
 
-           InsertarAuditoriaInicio(usuarioLogueado.Nombre, fechaInicio); 
+           InsertarAuditoriaInicio(usuarioLogueado.Nombre, fechaInicio);
 
-
+            ConfigurarPermisosPorCargo();
         }
 
         private void usuariosToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            frmGestionUsuarios UsuariosVentana = new frmGestionUsuarios();
+            frmGestionUsuarios UsuariosVentana = new frmGestionUsuarios(usuarioLogueado);
             UsuariosVentana.ShowDialog();
         }
 
@@ -59,9 +59,43 @@ namespace pryLunaM_IEFI
 
         private void listarTareasToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            frmListarTarea ListarTareas_Ventana = new frmListarTarea();
+            frmListarTarea ListarTareas_Ventana = new frmListarTarea(usuarioLogueado);
             ListarTareas_Ventana.ShowDialog();
         }
+
+        private void ConfigurarPermisosPorCargo()
+        {
+            string cargo = usuarioLogueado.Cargo;
+
+            if (cargo == "Administrador")
+            {
+                // El administrador tiene acceso total: no hace falta deshabilitar nada
+            }
+            else if (cargo == "Supervisor")
+            {
+                usuariosToolStripMenuItem.Enabled = true;       // Registrar usuarios
+                registrarTareasToolStripMenuItem.Enabled = true;
+                listarTareasToolStripMenuItem.Enabled = true;
+                auditoriaToolStripMenuItem.Enabled = false;
+            }
+            else if (cargo == "Empleado")
+            {
+                usuariosToolStripMenuItem.Enabled = false;
+                registrarTareasToolStripMenuItem.Enabled = true;
+                listarTareasToolStripMenuItem.Enabled = false;
+                auditoriaToolStripMenuItem.Enabled = false;
+            }
+        }
+
+
+
+
+
+
+
+
+
+
 
         //-----------------------------------------CODIGO AUDITORIA------------------------------------------------------------
 

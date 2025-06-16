@@ -118,13 +118,40 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="LimpiarCampos" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\LimpiarCampos.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="cerrar-sesion" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\cerrar-sesion.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="ContraseñaVisible.png" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\ContraseñaVisible.png.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="LimpiarCampos" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\LimpiarCampos.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Agregar Tarea" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Agregar Tarea.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Tareas.. (1)" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Tareas.. (1).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Auditoria" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Auditoria.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="1_fseafaww1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\1_fseafaww1.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="Recargar 2" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Recargar 2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Agregar Usuario" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Agregar Usuario.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Listar Tarea" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Listar Tarea.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Administracion" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Administracion.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="11_aswasdas1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\11_aswasdas1.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

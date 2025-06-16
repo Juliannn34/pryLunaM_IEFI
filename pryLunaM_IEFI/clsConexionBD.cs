@@ -253,6 +253,28 @@ namespace pryLunaM_IEFI
             return tabla;
         }
 
+        public DataTable ObtenerTodasTareas()
+        {
+            DataTable tablaTareas= new DataTable();
+
+            try
+            {
+                using (coneccionBaseDatos = new SqlConnection(cadenaConexion))
+                {
+                    coneccionBaseDatos.Open();
+                    string consulta = "SELECT * FROM Tareas";
+                    SqlDataAdapter adaptador = new SqlDataAdapter(consulta, coneccionBaseDatos);
+                    adaptador.Fill(tablaTareas);
+                }
+            }
+            catch (Exception error)
+            {
+                MessageBox.Show("Error al obtener Usuario: " + error.Message);
+            }
+
+            return tablaTareas;
+        }
+
         public void AgregarTarea(clsTareas tarea)
         {
             try
@@ -315,6 +337,61 @@ namespace pryLunaM_IEFI
 
             return tablaTipoTarea;
         }
+        public DataTable ObtenerTareasPorTipo(int tipoTareaID)
+        {
+            DataTable tabla = new DataTable();
+
+            try
+            {
+                using (SqlConnection conexion = new SqlConnection(cadenaConexion))
+                {
+                    conexion.Open();
+                    string consulta = "SELECT * FROM Tareas WHERE TipoTareaID = @TipoTareaID";
+
+                    using (SqlCommand cmd = new SqlCommand(consulta, conexion))
+                    {
+                        cmd.Parameters.AddWithValue("@TipoTareaID", tipoTareaID);
+                        SqlDataAdapter adapter = new SqlDataAdapter(cmd);
+                        adapter.Fill(tabla);
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error al filtrar tareas: " + ex.Message);
+            }
+
+            return tabla;
+        }
+        public DataTable ObtenerUltimaTarea()
+        {
+            DataTable tabla = new DataTable();
+
+            try
+            {
+                using (SqlConnection conexion = new SqlConnection(cadenaConexion))
+                {
+                    conexion.Open();
+                    string consulta = @"
+                        SELECT TOP 1 *
+                        FROM Tareas
+                        ORDER BY ID DESC"; 
+
+                    using (SqlCommand comando = new SqlCommand(consulta, conexion))
+                    {
+                        SqlDataAdapter adaptador = new SqlDataAdapter(comando);
+                        adaptador.Fill(tabla);
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error al obtener la última tarea: " + ex.Message);
+            }
+
+            return tabla;
+        }
+
 
         public DataTable ObtenerDatosDeTablaLugares()
         {

@@ -12,13 +12,23 @@ namespace pryLunaM_IEFI
 {
     public partial class frmGestionUsuarios : Form
     {
-        public frmGestionUsuarios()
+        private clsUsuarios usuarioLogueado;
+
+        public frmGestionUsuarios(clsUsuarios usuario)
         {
             InitializeComponent();
+            usuarioLogueado = usuario;
         }
 
         private void frmGestionUsuarios_Load(object sender, EventArgs e)
         {
+            if (usuarioLogueado.Cargo != "Administrador" && usuarioLogueado.Cargo != "Supervisor")
+            {
+                MessageBox.Show("Acceso denegado. Solo administradores o supervisores pueden acceder.", "Permiso denegado", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                this.Close();
+                return;
+            }
+
             clsConexionBD objConexion = new clsConexionBD();
 
 

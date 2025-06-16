@@ -137,5 +137,32 @@
   <ItemGroup>
     <None Include="Resources\Recargar 2.png" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\cerrar-sesion.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Tareas.. %281%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Agregar Tarea.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Listar Tarea.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Administracion.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Agregar Usuario.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Auditoria.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\1_fseafaww1.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\11_aswasdas1.jpg" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
