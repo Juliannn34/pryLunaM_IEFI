@@ -33,7 +33,6 @@
             this.dgvUsuarios = new System.Windows.Forms.DataGridView();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.txtSueldo = new System.Windows.Forms.TextBox();
-            this.btnBuscarId = new System.Windows.Forms.Button();
             this.lblSueldo = new System.Windows.Forms.Label();
             this.txtId = new System.Windows.Forms.TextBox();
             this.lblID = new System.Windows.Forms.Label();
@@ -49,12 +48,13 @@
             this.txtNombre = new System.Windows.Forms.TextBox();
             this.cmbCargo = new System.Windows.Forms.ComboBox();
             this.lblNombre = new System.Windows.Forms.Label();
-            this.btnEliminarUsuario = new System.Windows.Forms.Button();
-            this.btnModificarUsuario = new System.Windows.Forms.Button();
+            this.imageList1 = new System.Windows.Forms.ImageList(this.components);
             this.btnRegistrarUsuario = new System.Windows.Forms.Button();
             this.btnRecargarGrilla = new System.Windows.Forms.Button();
             this.btnLimpiarCampos = new System.Windows.Forms.Button();
-            this.imageList1 = new System.Windows.Forms.ImageList(this.components);
+            this.btnBuscarId = new System.Windows.Forms.Button();
+            this.btnEliminarUsuario = new System.Windows.Forms.Button();
+            this.btnModificarUsuario = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvUsuarios)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
@@ -66,6 +66,7 @@
             this.dgvUsuarios.Name = "dgvUsuarios";
             this.dgvUsuarios.Size = new System.Drawing.Size(800, 514);
             this.dgvUsuarios.TabIndex = 0;
+            this.dgvUsuarios.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvUsuarios_CellClick);
             // 
             // groupBox1
             // 
@@ -102,17 +103,6 @@
             this.txtSueldo.Name = "txtSueldo";
             this.txtSueldo.Size = new System.Drawing.Size(188, 42);
             this.txtSueldo.TabIndex = 20;
-            // 
-            // btnBuscarId
-            // 
-            this.btnBuscarId.Font = new System.Drawing.Font("Javanese Text", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnBuscarId.Location = new System.Drawing.Point(259, 24);
-            this.btnBuscarId.Name = "btnBuscarId";
-            this.btnBuscarId.Size = new System.Drawing.Size(162, 35);
-            this.btnBuscarId.TabIndex = 19;
-            this.btnBuscarId.Text = "Buscar ID";
-            this.btnBuscarId.UseVisualStyleBackColor = true;
-            this.btnBuscarId.Click += new System.EventHandler(this.btnBuscarId_Click);
             // 
             // lblSueldo
             // 
@@ -252,66 +242,6 @@
             this.lblNombre.TabIndex = 1;
             this.lblNombre.Text = "Nombre:";
             // 
-            // btnEliminarUsuario
-            // 
-            this.btnEliminarUsuario.Font = new System.Drawing.Font("Javanese Text", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnEliminarUsuario.Location = new System.Drawing.Point(19, 587);
-            this.btnEliminarUsuario.Name = "btnEliminarUsuario";
-            this.btnEliminarUsuario.Size = new System.Drawing.Size(162, 35);
-            this.btnEliminarUsuario.TabIndex = 8;
-            this.btnEliminarUsuario.Text = "Eliminar Usuario";
-            this.btnEliminarUsuario.UseVisualStyleBackColor = true;
-            this.btnEliminarUsuario.Click += new System.EventHandler(this.btnEliminarUsuario_Click);
-            // 
-            // btnModificarUsuario
-            // 
-            this.btnModificarUsuario.Font = new System.Drawing.Font("Javanese Text", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnModificarUsuario.Location = new System.Drawing.Point(187, 587);
-            this.btnModificarUsuario.Name = "btnModificarUsuario";
-            this.btnModificarUsuario.Size = new System.Drawing.Size(162, 35);
-            this.btnModificarUsuario.TabIndex = 7;
-            this.btnModificarUsuario.Text = "Modificar Usuario";
-            this.btnModificarUsuario.UseVisualStyleBackColor = true;
-            this.btnModificarUsuario.Click += new System.EventHandler(this.btnModificarUsuario_Click);
-            // 
-            // btnRegistrarUsuario
-            // 
-            this.btnRegistrarUsuario.Font = new System.Drawing.Font("Javanese Text", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnRegistrarUsuario.Location = new System.Drawing.Point(355, 587);
-            this.btnRegistrarUsuario.Name = "btnRegistrarUsuario";
-            this.btnRegistrarUsuario.Size = new System.Drawing.Size(162, 35);
-            this.btnRegistrarUsuario.TabIndex = 0;
-            this.btnRegistrarUsuario.Text = "Registrar Usuario";
-            this.btnRegistrarUsuario.UseVisualStyleBackColor = true;
-            this.btnRegistrarUsuario.Click += new System.EventHandler(this.btnRegistrarUsuario_Click);
-            // 
-            // btnRecargarGrilla
-            // 
-            this.btnRecargarGrilla.BackColor = System.Drawing.Color.Transparent;
-            this.btnRecargarGrilla.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.btnRecargarGrilla.Font = new System.Drawing.Font("Javanese Text", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnRecargarGrilla.Image = global::pryLunaM_IEFI.Properties.Resources.Recargar_2;
-            this.btnRecargarGrilla.Location = new System.Drawing.Point(181, 495);
-            this.btnRecargarGrilla.Name = "btnRecargarGrilla";
-            this.btnRecargarGrilla.Size = new System.Drawing.Size(40, 38);
-            this.btnRecargarGrilla.TabIndex = 21;
-            this.btnRecargarGrilla.UseVisualStyleBackColor = false;
-            // 
-            // btnLimpiarCampos
-            // 
-            this.btnLimpiarCampos.BackColor = System.Drawing.Color.Transparent;
-            this.btnLimpiarCampos.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.btnLimpiarCampos.Font = new System.Drawing.Font("Javanese Text", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnLimpiarCampos.Image = global::pryLunaM_IEFI.Properties.Resources.LimpiarCampos;
-            this.btnLimpiarCampos.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnLimpiarCampos.Location = new System.Drawing.Point(6, 495);
-            this.btnLimpiarCampos.Name = "btnLimpiarCampos";
-            this.btnLimpiarCampos.Size = new System.Drawing.Size(169, 38);
-            this.btnLimpiarCampos.TabIndex = 9;
-            this.btnLimpiarCampos.Text = "Limpiar Campos";
-            this.btnLimpiarCampos.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnLimpiarCampos.UseVisualStyleBackColor = false;
-            // 
             // imageList1
             // 
             this.imageList1.ImageStream = ((System.Windows.Forms.ImageListStreamer)(resources.GetObject("imageList1.ImageStream")));
@@ -343,6 +273,95 @@
             this.imageList1.Images.SetKeyName(24, "Reprecentacion de una Cola.jpg");
             this.imageList1.Images.SetKeyName(25, "Reprecentacion de una Pila.jpg");
             this.imageList1.Images.SetKeyName(26, "Representacion de Listas Simples Entrelazadas.jpg");
+            // 
+            // btnRegistrarUsuario
+            // 
+            this.btnRegistrarUsuario.BackColor = System.Drawing.Color.PaleGreen;
+            this.btnRegistrarUsuario.Font = new System.Drawing.Font("Javanese Text", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnRegistrarUsuario.Image = global::pryLunaM_IEFI.Properties.Resources.plus_78170051;
+            this.btnRegistrarUsuario.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnRegistrarUsuario.ImageKey = "(ninguno)";
+            this.btnRegistrarUsuario.Location = new System.Drawing.Point(390, 577);
+            this.btnRegistrarUsuario.Name = "btnRegistrarUsuario";
+            this.btnRegistrarUsuario.Size = new System.Drawing.Size(178, 45);
+            this.btnRegistrarUsuario.TabIndex = 0;
+            this.btnRegistrarUsuario.Text = "Registrar Usuario";
+            this.btnRegistrarUsuario.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnRegistrarUsuario.UseVisualStyleBackColor = false;
+            this.btnRegistrarUsuario.Click += new System.EventHandler(this.btnRegistrarUsuario_Click);
+            // 
+            // btnRecargarGrilla
+            // 
+            this.btnRecargarGrilla.BackColor = System.Drawing.Color.Transparent;
+            this.btnRecargarGrilla.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btnRecargarGrilla.Font = new System.Drawing.Font("Javanese Text", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnRecargarGrilla.Image = global::pryLunaM_IEFI.Properties.Resources.Recargar_2;
+            this.btnRecargarGrilla.Location = new System.Drawing.Point(181, 495);
+            this.btnRecargarGrilla.Name = "btnRecargarGrilla";
+            this.btnRecargarGrilla.Size = new System.Drawing.Size(40, 38);
+            this.btnRecargarGrilla.TabIndex = 21;
+            this.btnRecargarGrilla.UseVisualStyleBackColor = false;
+            this.btnRecargarGrilla.Click += new System.EventHandler(this.btnRecargarGrilla_Click);
+            // 
+            // btnLimpiarCampos
+            // 
+            this.btnLimpiarCampos.BackColor = System.Drawing.Color.Transparent;
+            this.btnLimpiarCampos.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btnLimpiarCampos.Font = new System.Drawing.Font("Javanese Text", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnLimpiarCampos.Image = global::pryLunaM_IEFI.Properties.Resources.LimpiarCampos;
+            this.btnLimpiarCampos.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnLimpiarCampos.Location = new System.Drawing.Point(6, 495);
+            this.btnLimpiarCampos.Name = "btnLimpiarCampos";
+            this.btnLimpiarCampos.Size = new System.Drawing.Size(169, 38);
+            this.btnLimpiarCampos.TabIndex = 9;
+            this.btnLimpiarCampos.Text = "Limpiar Campos";
+            this.btnLimpiarCampos.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnLimpiarCampos.UseVisualStyleBackColor = false;
+            this.btnLimpiarCampos.Click += new System.EventHandler(this.btnLimpiarCampos_Click);
+            // 
+            // btnBuscarId
+            // 
+            this.btnBuscarId.Font = new System.Drawing.Font("Javanese Text", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnBuscarId.Image = global::pryLunaM_IEFI.Properties.Resources.busqueda;
+            this.btnBuscarId.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnBuscarId.Location = new System.Drawing.Point(259, 24);
+            this.btnBuscarId.Name = "btnBuscarId";
+            this.btnBuscarId.Size = new System.Drawing.Size(130, 38);
+            this.btnBuscarId.TabIndex = 19;
+            this.btnBuscarId.Text = "Buscar ID";
+            this.btnBuscarId.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnBuscarId.UseVisualStyleBackColor = true;
+            this.btnBuscarId.Click += new System.EventHandler(this.btnBuscarId_Click);
+            // 
+            // btnEliminarUsuario
+            // 
+            this.btnEliminarUsuario.BackColor = System.Drawing.Color.LightCoral;
+            this.btnEliminarUsuario.Font = new System.Drawing.Font("Javanese Text", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnEliminarUsuario.Image = global::pryLunaM_IEFI.Properties.Resources.trash_14503749;
+            this.btnEliminarUsuario.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnEliminarUsuario.Location = new System.Drawing.Point(19, 577);
+            this.btnEliminarUsuario.Name = "btnEliminarUsuario";
+            this.btnEliminarUsuario.Size = new System.Drawing.Size(183, 45);
+            this.btnEliminarUsuario.TabIndex = 8;
+            this.btnEliminarUsuario.Text = "Eliminar Usuario";
+            this.btnEliminarUsuario.TextAlign = System.Drawing.ContentAlignment.BottomRight;
+            this.btnEliminarUsuario.UseVisualStyleBackColor = false;
+            this.btnEliminarUsuario.Click += new System.EventHandler(this.btnEliminarUsuario_Click);
+            // 
+            // btnModificarUsuario
+            // 
+            this.btnModificarUsuario.BackColor = System.Drawing.Color.PaleGoldenrod;
+            this.btnModificarUsuario.Font = new System.Drawing.Font("Javanese Text", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnModificarUsuario.Image = global::pryLunaM_IEFI.Properties.Resources.pencil_10296476__1_;
+            this.btnModificarUsuario.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnModificarUsuario.Location = new System.Drawing.Point(208, 577);
+            this.btnModificarUsuario.Name = "btnModificarUsuario";
+            this.btnModificarUsuario.Size = new System.Drawing.Size(176, 45);
+            this.btnModificarUsuario.TabIndex = 7;
+            this.btnModificarUsuario.Text = "Modificar Usuario";
+            this.btnModificarUsuario.TextAlign = System.Drawing.ContentAlignment.BottomRight;
+            this.btnModificarUsuario.UseVisualStyleBackColor = false;
+            this.btnModificarUsuario.Click += new System.EventHandler(this.btnModificarUsuario_Click);
             // 
             // frmGestionUsuarios
             // 

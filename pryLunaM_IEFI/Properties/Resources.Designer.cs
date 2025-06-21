@@ -123,6 +123,26 @@ namespace pryLunaM_IEFI.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap busqueda {
+            get {
+                object obj = ResourceManager.GetObject("busqueda", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap calendario {
+            get {
+                object obj = ResourceManager.GetObject("calendario", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap cerrar_sesion {
             get {
                 object obj = ResourceManager.GetObject("cerrar-sesion", resourceCulture);
@@ -136,6 +156,26 @@ namespace pryLunaM_IEFI.Properties {
         internal static System.Drawing.Bitmap ContraseñaVisible_png {
             get {
                 object obj = ResourceManager.GetObject("ContraseñaVisible.png", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap disco_flexible {
+            get {
+                object obj = ResourceManager.GetObject("disco-flexible", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap icons8_buscar_100 {
+            get {
+                object obj = ResourceManager.GetObject("icons8-buscar-100", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -163,6 +203,66 @@ namespace pryLunaM_IEFI.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap marca_de_la_senal {
+            get {
+                object obj = ResourceManager.GetObject("marca-de-la-senal", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap pencil_10296476 {
+            get {
+                object obj = ResourceManager.GetObject("pencil_10296476", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap pencil_10296476__1_ {
+            get {
+                object obj = ResourceManager.GetObject("pencil_10296476 (1)", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap plus_7817005 {
+            get {
+                object obj = ResourceManager.GetObject("plus_7817005", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap plus_7817005__1_ {
+            get {
+                object obj = ResourceManager.GetObject("plus_7817005 (1)", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap plus_78170051 {
+            get {
+                object obj = ResourceManager.GetObject("plus_78170051", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Recargar_2 {
             get {
                 object obj = ResourceManager.GetObject("Recargar 2", resourceCulture);
@@ -176,6 +276,16 @@ namespace pryLunaM_IEFI.Properties {
         internal static System.Drawing.Bitmap Tareas____1_ {
             get {
                 object obj = ResourceManager.GetObject("Tareas.. (1)", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap trash_14503749 {
+            get {
+                object obj = ResourceManager.GetObject("trash_14503749", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

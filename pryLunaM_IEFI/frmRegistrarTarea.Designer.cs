@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.btnAgendar = new System.Windows.Forms.Button();
             this.lblFecha = new System.Windows.Forms.Label();
             this.dtpFecha = new System.Windows.Forms.DateTimePicker();
             this.cmbTarea = new System.Windows.Forms.ComboBox();
@@ -37,6 +36,8 @@
             this.lblLugar = new System.Windows.Forms.Label();
             this.dgvTarea = new System.Windows.Forms.DataGridView();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.cmbElegirTarea = new System.Windows.Forms.ComboBox();
+            this.lblElegirTarea = new System.Windows.Forms.Label();
             this.chkReclamoRecibo = new System.Windows.Forms.CheckBox();
             this.chkReclamoSalario = new System.Windows.Forms.CheckBox();
             this.lblReclamo = new System.Windows.Forms.Label();
@@ -45,27 +46,15 @@
             this.lblLicencia = new System.Windows.Forms.Label();
             this.chkInsumo = new System.Windows.Forms.CheckBox();
             this.label4 = new System.Windows.Forms.Label();
-            this.btnCancelar = new System.Windows.Forms.Button();
-            this.btnGrabar = new System.Windows.Forms.Button();
             this.txtComentario = new System.Windows.Forms.TextBox();
             this.lblNombreTarea = new System.Windows.Forms.Label();
             this.txtNombreTarea = new System.Windows.Forms.TextBox();
-            this.lblElegirTarea = new System.Windows.Forms.Label();
-            this.cmbElegirTarea = new System.Windows.Forms.ComboBox();
-            this.checkBox1 = new System.Windows.Forms.CheckBox();
+            this.btnGrabar = new System.Windows.Forms.Button();
+            this.btnCancelar = new System.Windows.Forms.Button();
+            this.btnAgendar = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvTarea)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // btnAgendar
-            // 
-            this.btnAgendar.Location = new System.Drawing.Point(218, 127);
-            this.btnAgendar.Name = "btnAgendar";
-            this.btnAgendar.Size = new System.Drawing.Size(143, 29);
-            this.btnAgendar.TabIndex = 0;
-            this.btnAgendar.Text = "Agendar";
-            this.btnAgendar.UseVisualStyleBackColor = true;
-            this.btnAgendar.Click += new System.EventHandler(this.btnAgendar_Click);
             // 
             // lblFecha
             // 
@@ -121,14 +110,13 @@
             // dgvTarea
             // 
             this.dgvTarea.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvTarea.Location = new System.Drawing.Point(96, 174);
+            this.dgvTarea.Location = new System.Drawing.Point(68, 175);
             this.dgvTarea.Name = "dgvTarea";
-            this.dgvTarea.Size = new System.Drawing.Size(445, 124);
+            this.dgvTarea.Size = new System.Drawing.Size(463, 124);
             this.dgvTarea.TabIndex = 7;
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.checkBox1);
             this.groupBox1.Controls.Add(this.cmbElegirTarea);
             this.groupBox1.Controls.Add(this.lblElegirTarea);
             this.groupBox1.Controls.Add(this.chkReclamoRecibo);
@@ -141,10 +129,27 @@
             this.groupBox1.Controls.Add(this.label4);
             this.groupBox1.Location = new System.Drawing.Point(39, 319);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(530, 146);
+            this.groupBox1.Size = new System.Drawing.Size(515, 146);
             this.groupBox1.TabIndex = 8;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Detalle";
+            // 
+            // cmbElegirTarea
+            // 
+            this.cmbElegirTarea.FormattingEnabled = true;
+            this.cmbElegirTarea.Location = new System.Drawing.Point(39, 60);
+            this.cmbElegirTarea.Name = "cmbElegirTarea";
+            this.cmbElegirTarea.Size = new System.Drawing.Size(121, 21);
+            this.cmbElegirTarea.TabIndex = 14;
+            // 
+            // lblElegirTarea
+            // 
+            this.lblElegirTarea.AutoSize = true;
+            this.lblElegirTarea.Location = new System.Drawing.Point(36, 33);
+            this.lblElegirTarea.Name = "lblElegirTarea";
+            this.lblElegirTarea.Size = new System.Drawing.Size(67, 13);
+            this.lblElegirTarea.TabIndex = 14;
+            this.lblElegirTarea.Text = "Elegir Tarea:";
             // 
             // chkReclamoRecibo
             // 
@@ -223,29 +228,9 @@
             this.label4.TabIndex = 9;
             this.label4.Text = "Uniforme:";
             // 
-            // btnCancelar
-            // 
-            this.btnCancelar.Location = new System.Drawing.Point(163, 608);
-            this.btnCancelar.Name = "btnCancelar";
-            this.btnCancelar.Size = new System.Drawing.Size(143, 29);
-            this.btnCancelar.TabIndex = 9;
-            this.btnCancelar.Text = "Cancelar";
-            this.btnCancelar.UseVisualStyleBackColor = true;
-            this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
-            // 
-            // btnGrabar
-            // 
-            this.btnGrabar.Location = new System.Drawing.Point(312, 608);
-            this.btnGrabar.Name = "btnGrabar";
-            this.btnGrabar.Size = new System.Drawing.Size(143, 29);
-            this.btnGrabar.TabIndex = 10;
-            this.btnGrabar.Text = "Grabar";
-            this.btnGrabar.UseVisualStyleBackColor = true;
-            this.btnGrabar.Click += new System.EventHandler(this.btnGrabar_Click);
-            // 
             // txtComentario
             // 
-            this.txtComentario.Location = new System.Drawing.Point(78, 486);
+            this.txtComentario.Location = new System.Drawing.Point(68, 486);
             this.txtComentario.Multiline = true;
             this.txtComentario.Name = "txtComentario";
             this.txtComentario.Size = new System.Drawing.Size(463, 94);
@@ -267,32 +252,50 @@
             this.txtNombreTarea.Size = new System.Drawing.Size(121, 20);
             this.txtNombreTarea.TabIndex = 13;
             // 
-            // lblElegirTarea
+            // btnGrabar
             // 
-            this.lblElegirTarea.AutoSize = true;
-            this.lblElegirTarea.Location = new System.Drawing.Point(36, 33);
-            this.lblElegirTarea.Name = "lblElegirTarea";
-            this.lblElegirTarea.Size = new System.Drawing.Size(67, 13);
-            this.lblElegirTarea.TabIndex = 14;
-            this.lblElegirTarea.Text = "Elegir Tarea:";
+            this.btnGrabar.BackColor = System.Drawing.Color.DarkSeaGreen;
+            this.btnGrabar.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnGrabar.Image = global::pryLunaM_IEFI.Properties.Resources.disco_flexible;
+            this.btnGrabar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnGrabar.Location = new System.Drawing.Point(312, 600);
+            this.btnGrabar.Name = "btnGrabar";
+            this.btnGrabar.Size = new System.Drawing.Size(134, 47);
+            this.btnGrabar.TabIndex = 10;
+            this.btnGrabar.Text = "Grabar";
+            this.btnGrabar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnGrabar.UseVisualStyleBackColor = false;
+            this.btnGrabar.Click += new System.EventHandler(this.btnGrabar_Click);
             // 
-            // cmbElegirTarea
+            // btnCancelar
             // 
-            this.cmbElegirTarea.FormattingEnabled = true;
-            this.cmbElegirTarea.Location = new System.Drawing.Point(39, 60);
-            this.cmbElegirTarea.Name = "cmbElegirTarea";
-            this.cmbElegirTarea.Size = new System.Drawing.Size(121, 21);
-            this.cmbElegirTarea.TabIndex = 14;
+            this.btnCancelar.BackColor = System.Drawing.Color.Pink;
+            this.btnCancelar.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCancelar.Image = global::pryLunaM_IEFI.Properties.Resources.calendario;
+            this.btnCancelar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnCancelar.Location = new System.Drawing.Point(163, 600);
+            this.btnCancelar.Name = "btnCancelar";
+            this.btnCancelar.Size = new System.Drawing.Size(143, 47);
+            this.btnCancelar.TabIndex = 9;
+            this.btnCancelar.Text = "Cancelar";
+            this.btnCancelar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnCancelar.UseVisualStyleBackColor = false;
+            this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
             // 
-            // checkBox1
+            // btnAgendar
             // 
-            this.checkBox1.AutoSize = true;
-            this.checkBox1.Location = new System.Drawing.Point(374, 19);
-            this.checkBox1.Name = "checkBox1";
-            this.checkBox1.Size = new System.Drawing.Size(82, 17);
-            this.checkBox1.TabIndex = 19;
-            this.checkBox1.Text = "Vacaciones";
-            this.checkBox1.UseVisualStyleBackColor = true;
+            this.btnAgendar.BackColor = System.Drawing.Color.LightSteelBlue;
+            this.btnAgendar.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAgendar.Image = global::pryLunaM_IEFI.Properties.Resources.marca_de_la_senal;
+            this.btnAgendar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnAgendar.Location = new System.Drawing.Point(222, 117);
+            this.btnAgendar.Name = "btnAgendar";
+            this.btnAgendar.Size = new System.Drawing.Size(134, 42);
+            this.btnAgendar.TabIndex = 0;
+            this.btnAgendar.Text = "Agendar";
+            this.btnAgendar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnAgendar.UseVisualStyleBackColor = false;
+            this.btnAgendar.Click += new System.EventHandler(this.btnAgendar_Click);
             // 
             // frmRegistrarTarea
             // 
@@ -351,6 +354,5 @@
         private System.Windows.Forms.TextBox txtNombreTarea;
         private System.Windows.Forms.Label lblElegirTarea;
         private System.Windows.Forms.ComboBox cmbElegirTarea;
-        private System.Windows.Forms.CheckBox checkBox1;
     }
 }

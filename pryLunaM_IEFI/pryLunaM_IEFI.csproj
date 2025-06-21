@@ -164,5 +164,38 @@
   <ItemGroup>
     <None Include="Resources\11_aswasdas1.jpg" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\plus_7817005.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\pencil_10296476.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\plus_7817005 %281%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\pencil_10296476 %281%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\trash_14503749.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\plus_78170051.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-buscar-100.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\busqueda.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\marca-de-la-senal.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\disco-flexible.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\calendario.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
