@@ -66,6 +66,7 @@
             this.salirToolStripMenuItem.Name = "salirToolStripMenuItem";
             this.salirToolStripMenuItem.Size = new System.Drawing.Size(57, 20);
             this.salirToolStripMenuItem.Text = "Salir";
+            this.salirToolStripMenuItem.Click += new System.EventHandler(this.salirToolStripMenuItem_Click);
             // 
             // tareasToolStripMenuItem
             // 
@@ -77,14 +78,14 @@
             this.tareasToolStripMenuItem.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.tareasToolStripMenuItem.Image = global::pryLunaM_IEFI.Properties.Resources.Tareas____1_;
             this.tareasToolStripMenuItem.Name = "tareasToolStripMenuItem";
-            this.tareasToolStripMenuItem.Size = new System.Drawing.Size(77, 20);
+            this.tareasToolStripMenuItem.Size = new System.Drawing.Size(76, 20);
             this.tareasToolStripMenuItem.Text = "Tareas...";
             // 
             // registrarTareasToolStripMenuItem
             // 
             this.registrarTareasToolStripMenuItem.Image = global::pryLunaM_IEFI.Properties.Resources.Agregar_Tarea;
             this.registrarTareasToolStripMenuItem.Name = "registrarTareasToolStripMenuItem";
-            this.registrarTareasToolStripMenuItem.Size = new System.Drawing.Size(165, 22);
+            this.registrarTareasToolStripMenuItem.Size = new System.Drawing.Size(164, 22);
             this.registrarTareasToolStripMenuItem.Text = "Registrar Tareas...";
             this.registrarTareasToolStripMenuItem.Click += new System.EventHandler(this.registrarTareasToolStripMenuItem_Click);
             // 
@@ -92,7 +93,7 @@
             // 
             this.listarTareasToolStripMenuItem.Image = global::pryLunaM_IEFI.Properties.Resources.Listar_Tarea;
             this.listarTareasToolStripMenuItem.Name = "listarTareasToolStripMenuItem";
-            this.listarTareasToolStripMenuItem.Size = new System.Drawing.Size(165, 22);
+            this.listarTareasToolStripMenuItem.Size = new System.Drawing.Size(164, 22);
             this.listarTareasToolStripMenuItem.Text = "Listar Tareas...";
             this.listarTareasToolStripMenuItem.Click += new System.EventHandler(this.listarTareasToolStripMenuItem_Click);
             // 
@@ -159,7 +160,7 @@
             // pnlAuditoria
             // 
             this.pnlAuditoria.BackColor = System.Drawing.Color.Transparent;
-            this.pnlAuditoria.Location = new System.Drawing.Point(0, 0);
+            this.pnlAuditoria.Location = new System.Drawing.Point(24, 27);
             this.pnlAuditoria.Name = "pnlAuditoria";
             this.pnlAuditoria.Size = new System.Drawing.Size(800, 452);
             this.pnlAuditoria.TabIndex = 4;

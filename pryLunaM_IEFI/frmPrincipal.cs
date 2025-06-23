@@ -63,6 +63,11 @@ namespace pryLunaM_IEFI
             ListarTareas_Ventana.ShowDialog();
         }
 
+        private void salirToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
+
         private void ConfigurarPermisosPorCargo()
         {
             string cargo = usuarioLogueado.Cargo;
@@ -171,7 +176,9 @@ namespace pryLunaM_IEFI
             }
         }
 
-       
+        
+
+
 
 
 
